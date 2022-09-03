@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SectionStyled } from "../../../common-styles/section.styled";
+import SectionStyled from "../../../common-styles/section.styled";
 
 export const StyledSection = styled(SectionStyled)`
   background-color: ${({ theme }) => theme.palette.primary.main};

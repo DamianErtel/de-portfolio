@@ -1,4 +1,5 @@
 import "styled-components";
+
 interface IPalette {
   main: string;
   dark: string;

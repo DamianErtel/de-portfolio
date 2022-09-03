@@ -1,6 +1,7 @@
 // theme.ts
 import { DefaultTheme } from "styled-components";
-export const defaultTheme: DefaultTheme = {
+
+const defaultTheme: DefaultTheme = {
   borderRadius: "4px",
   palette: {
     common: {
@@ -21,3 +22,5 @@ export const defaultTheme: DefaultTheme = {
     },
   },
 };
+
+export default defaultTheme;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SectionStyled = styled.section`
+const SectionStyled = styled.section`
   width: 100%;
   height: 100vh;
   scroll-snap-align: center;
@@ -9,3 +9,5 @@ export const SectionStyled = styled.section`
   color: ${({ theme }) => theme.palette.primary.contrastText};
   font-weight: bold;
 `;
+
+export default SectionStyled;

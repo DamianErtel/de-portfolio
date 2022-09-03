@@ -3,13 +3,11 @@ import type { HeadFC } from "gatsby";
 import Layout from "../components/utils/Layout";
 import Main from "../components/sections/main";
 
-const Index = () => {
-  return (
-    <Layout>
-      <Main />
-    </Layout>
-  );
-};
+const Index = () => (
+  <Layout>
+    <Main />
+  </Layout>
+);
 
 export default Index;
 
