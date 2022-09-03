@@ -8,8 +8,10 @@ const Main = () => (
     <Container>
       <MessageContainer />
       <ButtonContainer>
-        <BaseButton type="button">About me</BaseButton>
-        <BaseButton type="button" variant="secondary">
+        <BaseButton as="a" href="#skills">
+          About me
+        </BaseButton>
+        <BaseButton as="a" href="#contact" variant="secondary">
           Contact me
         </BaseButton>
       </ButtonContainer>

@@ -9,6 +9,10 @@ const BaseButton = styled.button<{ variant?: string }>`
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   transition: background-color 0.2s ease-in-out;
   font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   ${({ variant, theme }) => {
     switch (variant) {
       case "secondary":
