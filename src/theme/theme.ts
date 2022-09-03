@@ -10,7 +10,7 @@ export const defaultTheme: DefaultTheme = {
     primary: {
       main: "#6B0EE1",
       dark: "#7205F7",
-      light: "#D4C8E7",
+      light: "#8840e3",
       contrastText: "#fff",
     },
     secondary: {

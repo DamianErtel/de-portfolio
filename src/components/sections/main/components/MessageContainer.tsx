@@ -1,5 +1,5 @@
 import { TypeAnimation } from "react-type-animation";
-import { StyledMessageContainer } from "../Main.styled";
+import { StyledMessageContainer } from "../main.styled";
 import * as React from "react";
 
 const MessageContainer = () => (
