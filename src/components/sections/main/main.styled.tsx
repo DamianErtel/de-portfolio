@@ -26,4 +26,5 @@ export const StyledMessageContainer = styled.article`
   flex-direction: column;
   min-width: 360px;
   font-size: 4rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;

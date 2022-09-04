@@ -25,7 +25,10 @@
     "react/jsx-one-expression-per-line": 0,
     "import/prefer-default-export": 0,
     "implicit-arrow-linebreak": 0,
-    "no-confusing-arrow": 0
+    "no-confusing-arrow": 0,
+    "object-curly-newline": 0,
+    "@typescript-eslint/comma-dangle": 0,
+    "function-paren-newline": 0
   },
   "ignorePatterns": ["public", "gatsby-config.ts"]
 }
