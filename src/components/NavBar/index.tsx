@@ -28,7 +28,7 @@ const NavBar = ({ location }: { location: Location }) => {
         <StyledTextTransition springConfig={presets.wobbly}>
           <h2>{currentSection}</h2>
         </StyledTextTransition>
-        <SidebarWrapper navLinks={navLinks} />
+        <SidebarWrapper location={location} navLinks={navLinks} />
       </StyledMobileNavbar>
     </>
   );
