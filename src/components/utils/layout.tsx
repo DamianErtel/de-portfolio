@@ -4,10 +4,15 @@ import defaultTheme from "../../theme/theme";
 import GlobalStyle from "../../theme/global";
 import NavBar from "../NavBar";
 
-const Layout = ({ children }: { children: ReactNode }) => (
+interface LayoutProps {
+  children: ReactNode;
+  location: Location;
+}
+
+const Layout = ({ children, location }: LayoutProps) => (
   <ThemeProvider theme={defaultTheme}>
     <GlobalStyle />
-    <NavBar />
+    <NavBar location={location} />
     {children}
   </ThemeProvider>
 );

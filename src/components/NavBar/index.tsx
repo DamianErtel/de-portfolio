@@ -9,9 +9,7 @@ import {
 import { navLinks } from "../../utils/links";
 import SidebarWrapper from "./utils/SidebarWrapper";
 
-const { location } = window;
-
-const NavBar = () => {
+const NavBar = ({ location }: { location: Location }) => {
   const currentSection = navLinks.find(({ to }) => to === location.hash)?.text;
   return (
     <>
