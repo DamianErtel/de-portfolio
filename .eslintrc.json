@@ -28,7 +28,9 @@
     "no-confusing-arrow": 0,
     "object-curly-newline": 0,
     "@typescript-eslint/comma-dangle": 0,
-    "function-paren-newline": 0
+    "function-paren-newline": 0,
+    "@typescript-eslint/indent": 0,
+    "operator-linebreak": 0
   },
   "ignorePatterns": ["public", "gatsby-config.ts"]
 }

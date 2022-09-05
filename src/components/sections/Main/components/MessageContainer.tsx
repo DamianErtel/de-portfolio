@@ -1,34 +1,35 @@
-import { TypeAnimation } from "react-type-animation";
 import * as React from "react";
-import { StyledMessageContainer } from "../main.styled";
+import { StyledMessageContainer, StyledTypeAnimation } from "../Main.styled";
 
 const MessageContainer = () => (
   <StyledMessageContainer>
     <div style={{ display: "flex" }}>
-      <TypeAnimation
+      <StyledTypeAnimation
         sequence={["", 1000, "Hello, i'm"]}
         cursor={false}
-        style={{ fontSize: "4rem" }}
+        $main
       />
       &nbsp;
-      <TypeAnimation
+      <StyledTypeAnimation
         sequence={["", 2000, "Damian"]}
         cursor={false}
-        style={{ fontSize: "4rem", color: "#FFCD00" }}
+        style={{ color: "#FFCD00" }}
+        $main
       />
     </div>
     <div style={{ display: "flex" }}>
-      <TypeAnimation
+      <StyledTypeAnimation
         sequence={["", 3000, "Frontend", 500, "Backend", 500, "Fullstack"]}
         wrapper="div"
         cursor={false}
-        style={{ fontSize: "3rem" }}
+        $main={false}
       />
       &nbsp;
-      <TypeAnimation
+      <StyledTypeAnimation
         sequence={["", 7000, "Web Developer"]}
-        style={{ fontSize: "3rem", color: "#FFCD00" }}
+        style={{ color: "#FFCD00" }}
         cursor={false}
+        $main={false}
       />
     </div>
   </StyledMessageContainer>

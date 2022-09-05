@@ -1,14 +1,14 @@
 import * as React from "react";
-import { ButtonContainer, Container, StyledSection } from "./main.styled";
+import { ButtonContainer, Container, StyledSection } from "./Main.styled";
 import MessageContainer from "./components/MessageContainer";
-import BaseButton from "../../../common-styles/buttons.styled";
+import BaseButton from "../../../commonStyles/buttons.styled";
 import useChangeLocationHashOnView from "../../../hooks/useChangeLocationHashOnView";
 
 const Main = () => {
   const ref = useChangeLocationHashOnView("home");
 
   return (
-    <StyledSection>
+    <StyledSection id="home">
       <Container>
         <MessageContainer />
         <ButtonContainer>

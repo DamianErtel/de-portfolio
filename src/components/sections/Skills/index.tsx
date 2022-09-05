@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, StyledSection } from "../main/main.styled";
+import { Container, StyledSection } from "../Main/Main.styled";
 import useChangeLocationHashOnView from "../../../hooks/useChangeLocationHashOnView";
 
 const Skills = () => {
