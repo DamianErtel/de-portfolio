@@ -4,29 +4,20 @@ import { StyledMessageContainer, StyledTypeAnimation } from "../Main.styled";
 const MessageContainer = () => (
   <StyledMessageContainer>
     <div style={{ display: "flex" }}>
-      <StyledTypeAnimation
-        sequence={["", 1000, "Hello, i'm"]}
-        cursor={false}
-        $main
-      />
+      <span>Hello, i&apos;m&nbsp;</span>
+      <span>Damian</span>
       &nbsp;
-      <StyledTypeAnimation
-        sequence={["", 2000, "Damian"]}
-        cursor={false}
-        style={{ color: "#FFCD00" }}
-        $main
-      />
     </div>
     <div style={{ display: "flex" }}>
       <StyledTypeAnimation
-        sequence={["", 3000, "Frontend", 500, "Backend", 500, "Fullstack"]}
+        sequence={["", 200, "Frontend", 500, "Backend", 500, "Fullstack"]}
         wrapper="div"
         cursor={false}
         $main={false}
       />
       &nbsp;
       <StyledTypeAnimation
-        sequence={["", 7000, "Web Developer"]}
+        sequence={["", 3800, "Web Developer"]}
         style={{ color: "#FFCD00" }}
         cursor={false}
         $main={false}
