@@ -1,14 +1,14 @@
 import React from "react";
 import { Container, StyledSection } from "../Main/Main.styled";
-import useChangeLocationHashOnView from "../../../hooks/useChangeLocationHashOnView";
+// import useChangeLocationHashOnView from "../../../hooks/useChangeLocationHashOnView";
 
 const Contact = () => {
-  const ref = useChangeLocationHashOnView("contact");
+  // const ref = useChangeLocationHashOnView("contact");
 
   return (
     <StyledSection id="contact">
       <Container>
-        <p ref={ref}>CONTACT</p>
+        <p>CONTACT</p>
       </Container>
     </StyledSection>
   );
