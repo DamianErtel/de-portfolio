@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { presets } from "react-text-transition";
 import {
   StyledNavbar,
@@ -8,16 +8,19 @@ import {
 } from "./NavBar.styled";
 import { navLinks } from "../../utils/links";
 import SidebarWrapper from "./utils/SidebarWrapper";
+import { LocationContext } from "../utils/LocationContext";
 
-const NavBar = ({ location }: { location: Location }) => {
-  const currentSection = navLinks.find(({ to }) => to === location.hash)?.text;
+const NavBar = () => {
+  const location = useContext(LocationContext);
+
+  const currentSection = navLinks.find(({ to }) => to === location?.hash)?.text;
   return (
     <>
       <StyledNavbar>
         <ul>
           {navLinks.map(({ to, text }) => (
             <li key={`navbar-${text}`}>
-              <StyledLink to={to} $active={location.hash === to}>
+              <StyledLink to={to} $active={location?.hash === to}>
                 {text}
               </StyledLink>
             </li>
@@ -28,7 +31,7 @@ const NavBar = ({ location }: { location: Location }) => {
         <StyledTextTransition springConfig={presets.wobbly}>
           <h2>{currentSection}</h2>
         </StyledTextTransition>
-        <SidebarWrapper location={location} navLinks={navLinks} />
+        <SidebarWrapper navLinks={navLinks} />
       </StyledMobileNavbar>
     </>
   );

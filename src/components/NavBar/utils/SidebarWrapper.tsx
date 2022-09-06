@@ -4,13 +4,11 @@ import { IconContainer, Sidebar } from "../NavBar.styled";
 import NavIcon from "./NavIcon";
 import { NavLinksProps } from "../../../utils/links";
 
-const SidebarWrapper = ({
-  navLinks,
-  location,
-}: {
+interface SidebarWrapperProps {
   navLinks: NavLinksProps[];
-  location: Location;
-}) => {
+}
+
+const SidebarWrapper = ({ navLinks }: SidebarWrapperProps) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -18,11 +16,7 @@ const SidebarWrapper = ({
       <Sidebar isOpen={isOpen}>
         <IconContainer>
           {navLinks.map(({ to, icon }: NavLinksProps) => (
-            <NavIcon
-              location={location}
-              key={`SidebarWrapperIcon-${to}`}
-              to={to}
-            >
+            <NavIcon key={`SidebarWrapperIcon-${to}`} to={to}>
               {icon}
             </NavIcon>
           ))}

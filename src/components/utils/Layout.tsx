@@ -6,13 +6,12 @@ import NavBar from "../NavBar";
 
 interface LayoutProps {
   children: ReactNode;
-  location: Location;
 }
 
-const Layout = ({ children, location }: LayoutProps) => (
+const Layout = ({ children }: LayoutProps) => (
   <ThemeProvider theme={defaultTheme}>
     <GlobalStyle />
-    <NavBar location={location} />
+    <NavBar />
     {children}
   </ThemeProvider>
 );
