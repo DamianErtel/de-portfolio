@@ -10,6 +10,7 @@ import { navLinks } from "../../utils/links";
 import SidebarWrapper from "./utils/SidebarWrapper";
 import { LocationContext } from "../utils/LocationContext";
 
+// todo test changes
 const NavBar = () => {
   const location = useContext(LocationContext);
 
@@ -28,9 +29,9 @@ const NavBar = () => {
         </ul>
       </StyledNavbar>
       <StyledMobileNavbar>
-        <StyledTextTransition springConfig={presets.wobbly}>
-          <h2>{currentSection}</h2>
-        </StyledTextTransition>
+        {/*<StyledTextTransition springConfig={presets.wobbly}>*/}
+        <h2>{currentSection}</h2>
+        {/*</StyledTextTransition>*/}
         <SidebarWrapper navLinks={navLinks} />
       </StyledMobileNavbar>
     </>
