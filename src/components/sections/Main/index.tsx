@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ButtonContainer, Container, StyledSection } from "./Main.styled";
-// import MessageContainer from "./components/MessageContainer";
+import MessageContainer from "./components/MessageContainer";
 import BaseButton from "../../../commonStyles/buttons.styled";
 // import useChangeLocationHashOnView from "../../../hooks/useChangeLocationHashOnView";
 
@@ -11,8 +11,7 @@ const Main = () => {
   return (
     <StyledSection id="home">
       <Container>
-        {/*<MessageContainer />*/}
-        TEST
+        <MessageContainer />
         <ButtonContainer>
           <BaseButton as="a" href="#skills">
             About me
