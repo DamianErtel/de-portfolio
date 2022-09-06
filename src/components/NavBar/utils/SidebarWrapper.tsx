@@ -16,9 +16,9 @@ const SidebarWrapper = ({ navLinks }: SidebarWrapperProps) => {
       <Sidebar isOpen={isOpen}>
         <IconContainer>
           {navLinks.map(({ to, icon }: NavLinksProps) => (
-            <NavIcon key={`SidebarWrapperIcon-${to}`} to={to}>
-              {icon}
-            </NavIcon>
+            <li key={`SidebarWrapperIcon-${to}`}>
+              <NavIcon to={to}>{icon}</NavIcon>
+            </li>
           ))}
         </IconContainer>
       </Sidebar>

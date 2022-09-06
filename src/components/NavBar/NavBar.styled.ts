@@ -125,7 +125,7 @@ export const StyledHamburger = styled.button<{ $isOpen: boolean }>`
   }
 `;
 
-export const Sidebar = styled.nav<{ isOpen: boolean }>`
+export const Sidebar = styled.div<{ isOpen: boolean }>`
   width: 100%;
   max-width: ${({ isOpen }) => (isOpen ? "100px" : "0")};
   height: calc(100vh - 60px);
