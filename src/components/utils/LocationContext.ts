@@ -1,3 +1,11 @@
 import { createContext } from "react";
 
-export const LocationContext = createContext<null | Location>(null);
+export interface LocationContextProps {
+  scrollIndex: number;
+  location: Location | null;
+}
+
+export const LocationContext = createContext<LocationContextProps>({
+  scrollIndex: 0,
+  location: null,
+});

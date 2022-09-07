@@ -11,28 +11,26 @@ import SidebarWrapper from "./utils/SidebarWrapper";
 import { LocationContext } from "../utils/LocationContext";
 
 const NavBar = () => {
-  const location = useContext(LocationContext);
+  const { location, scrollIndex } = useContext(LocationContext);
 
   const [header, setHeader] = useState<string | null>(null);
 
   useEffect(() => {
-    if (location) {
-      const currentSection = navLinks.find(
-        ({ to }) => to === location?.hash
-      )?.text;
-      if (currentSection != null) {
-        setHeader(currentSection);
-      }
+    const currentSection = navLinks.find(
+      (_val, index) => index === scrollIndex
+    )?.text;
+    if (currentSection != null) {
+      setHeader(currentSection);
     }
-  }, [location]);
+  }, [scrollIndex]);
 
   return (
     <>
       <StyledNavbar>
         <ul>
-          {navLinks.map(({ to, text }) => (
+          {navLinks.map(({ to, text }, index) => (
             <li key={`navbar-${text}`}>
-              <StyledLink to={to} $active={location?.hash === to}>
+              <StyledLink to={to} $active={index === scrollIndex}>
                 {text}
               </StyledLink>
             </li>
