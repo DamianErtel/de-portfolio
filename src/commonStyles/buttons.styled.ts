@@ -22,17 +22,19 @@ const BaseButton = styled.button<{ variant?: string }>`
         return `
                 background: none;
                 border: 2px solid ${theme.palette.secondary.dark}; 
-                color: ${theme.palette.secondary.contrastText};
+                color: ${theme.palette.primary.contrastText};
                 &:hover {
                     background-color: ${theme.palette.secondary.dark};
+                    color: ${theme.palette.secondary.contrastText};
                 };
                 `;
       default:
         return `
-                background-color: ${theme.palette.primary.light};
-                color: ${theme.palette.primary.contrastText};
+                background-color: ${theme.palette.complementary.main};
+                color: ${theme.palette.complementary.contrastText};
                 &:hover {
-                    background-color: ${theme.palette.primary.lighter};
+                    background-color: ${theme.palette.complementary.main};
+                    color: ${theme.palette.complementary.contrastText};
                 }
             `;
     }

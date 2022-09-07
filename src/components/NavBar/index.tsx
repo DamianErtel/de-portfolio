@@ -1,28 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
-import { presets } from "react-text-transition";
-import {
-  StyledNavbar,
-  StyledLink,
-  StyledMobileNavbar,
-  StyledTextTransition,
-} from "./NavBar.styled";
+import React, { useContext } from "react";
+import { StyledNavbar, StyledLink, StyledMobileNavbar } from "./NavBar.styled";
 import { navLinks } from "../../utils/links";
 import SidebarWrapper from "./utils/SidebarWrapper";
 import { LocationContext } from "../utils/LocationContext";
 
 const NavBar = () => {
-  const { location, scrollIndex } = useContext(LocationContext);
-
-  const [header, setHeader] = useState<string | null>(null);
-
-  useEffect(() => {
-    const currentSection = navLinks.find(
-      (_val, index) => index === scrollIndex
-    )?.text;
-    if (currentSection != null) {
-      setHeader(currentSection);
-    }
-  }, [scrollIndex]);
+  const { scrollIndex } = useContext(LocationContext);
 
   return (
     <>
@@ -38,9 +21,6 @@ const NavBar = () => {
         </ul>
       </StyledNavbar>
       <StyledMobileNavbar>
-        <StyledTextTransition springConfig={presets.wobbly}>
-          <h2>{header}</h2>
-        </StyledTextTransition>
         <SidebarWrapper navLinks={navLinks} />
       </StyledMobileNavbar>
     </>

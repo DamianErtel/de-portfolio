@@ -48,7 +48,9 @@ export const StyledTypeAnimation = styled(TypeAnimation)<{
 }>`
   font-size: ${({ $main }) => ($main ? "4rem" : "3rem")};
   color: ${({ $color, theme }) =>
-    $color ? theme.palette.secondary.main : theme.palette.primary.contrastText};
+    $color
+      ? theme.palette.complementary.light
+      : theme.palette.primary.contrastText};
   @media screen and (max-width: 600px) {
     font-size: ${({ $main }) => ($main ? "3rem" : "2rem")};
   }

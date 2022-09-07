@@ -4,7 +4,6 @@ interface IPalette {
   main: string;
   dark: string;
   light: string;
-  lighter: string;
   contrastText: string;
 }
 declare module "styled-components" {
@@ -17,6 +16,8 @@ declare module "styled-components" {
       };
       primary: IPalette;
       secondary: IPalette;
+      additional: IPalette;
+      complementary: IPalette;
     };
   }
 }

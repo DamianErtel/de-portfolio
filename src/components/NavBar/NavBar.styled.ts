@@ -5,7 +5,7 @@ import TextTransition from "react-text-transition";
 export const IconContainer = styled.ul`
   min-height: 300px;
   list-style-type: none;
-  margin: 100px auto;
+  margin: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -20,14 +20,14 @@ export const IconWrapperLink = styled(Link)<{ $active: boolean }>`
     height: 40px;
     color: ${({ theme, $active }) =>
       $active
-        ? theme.palette.secondary.main
+        ? theme.palette.complementary.light
         : theme.palette.primary.contrastText};
   }
 `;
 
 export const StyledNavbar = styled.nav`
   display: flex;
-  background-color: ${({ theme }) => theme.palette.primary.lighter};
+  background-color: ${({ theme }) => theme.palette.primary.light};
   width: 100vw;
   height: 60px;
   position: fixed;
@@ -55,8 +55,8 @@ export const StyledLink = styled(Link)<{ $active: boolean }>`
   font-size: 2rem;
   color: ${({ theme, $active }) =>
     $active
-      ? theme.palette.secondary.main
-      : theme.palette.secondary.contrastText};
+      ? theme.palette.complementary.light
+      : theme.palette.primary.contrastText};
   font-weight: bold;
   text-decoration: none;
 `;
@@ -79,7 +79,6 @@ export const StyledMobileNavbar = styled.nav`
   display: flex;
   justify-content: end;
   align-items: center;
-  background-color: ${({ theme }) => theme.palette.primary.lighter};
   @media screen and (min-width: 601px) {
     display: none;
   }
@@ -126,27 +125,18 @@ export const StyledHamburger = styled.button<{ $isOpen: boolean }>`
 `;
 
 export const Sidebar = styled.div<{ isOpen: boolean }>`
+  z-index: 10;
   width: 100%;
   max-width: ${({ isOpen }) => (isOpen ? "100px" : "0")};
-  height: calc(100vh - 60px);
+  height: 100%;
   position: fixed;
   right: 0;
-  top: 60px;
-  z-index: 100;
+  top: 0;
   transition: max-width 0.3s ease-in-out;
-  background-color: ${({ theme }) => theme.palette.primary.lighter};
+  background-color: ${({ theme }) => theme.palette.primary.light};
   display: flex;
   flex-flow: column;
   overflow: hidden;
-  hr {
-    margin: 15px auto 20px;
-    width: 30px;
-    transition: width 0.3s ease-in-out;
-  }
-  div,
-  p {
-    color: ${({ theme }) => theme.palette.common.white};
-  }
   a {
     text-decoration: none;
   }
