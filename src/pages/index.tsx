@@ -13,7 +13,7 @@ const Index = ({ location }: PageProps) => {
     const handleScroll = () => {
       const index = window.scrollY / window.innerHeight;
       if (Number.isInteger(index)) {
-        window.location.hash = navLinks[index]?.to;
+        // window.location.hash = navLinks[index]?.to;
       }
     };
 
