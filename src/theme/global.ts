@@ -11,6 +11,9 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    @media screen and (max-width: 600px) {
+      scroll-snap-type: y proximity;
+    }
   }
   body {
     margin: 0;
