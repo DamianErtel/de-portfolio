@@ -7,28 +7,32 @@ const BaseButton = styled.button<{ variant?: string }>`
   border: none;
   cursor: pointer;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  transition: background-color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   font-weight: bold;
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  &:hover {
+    transform: scale(1.1);
+  }
   ${({ variant, theme }) => {
     switch (variant) {
       case "secondary":
         return `
-                background-color: ${theme.palette.secondary.main};
-                color: ${theme.palette.primary.main};
+                background: none;
+                border: 2px solid ${theme.palette.secondary.dark}; 
+                color: ${theme.palette.secondary.contrastText};
                 &:hover {
-                    background-color: ${theme.palette.secondary.light};
+                    background-color: ${theme.palette.secondary.dark};
                 };
                 `;
       default:
         return `
-                background-color: ${theme.palette.primary.dark};
+                background-color: ${theme.palette.primary.light};
                 color: ${theme.palette.primary.contrastText};
                 &:hover {
-                    background-color: ${theme.palette.primary.light};
+                    background-color: ${theme.palette.primary.lighter};
                 }
             `;
     }

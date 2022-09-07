@@ -27,7 +27,7 @@ export const IconWrapperLink = styled(Link)<{ $active: boolean }>`
 
 export const StyledNavbar = styled.nav`
   display: flex;
-  background-color: ${({ theme }) => theme.palette.primary.light};
+  background-color: ${({ theme }) => theme.palette.primary.lighter};
   width: 100vw;
   height: 60px;
   position: fixed;
@@ -79,7 +79,7 @@ export const StyledMobileNavbar = styled.nav`
   display: flex;
   justify-content: end;
   align-items: center;
-  background-color: ${({ theme }) => theme.palette.primary.light};
+  background-color: ${({ theme }) => theme.palette.primary.lighter};
   @media screen and (min-width: 601px) {
     display: none;
   }
@@ -134,7 +134,7 @@ export const Sidebar = styled.div<{ isOpen: boolean }>`
   top: 60px;
   z-index: 100;
   transition: max-width 0.3s ease-in-out;
-  background-color: ${({ theme }) => theme.palette.primary.light};
+  background-color: ${({ theme }) => theme.palette.primary.lighter};
   display: flex;
   flex-flow: column;
   overflow: hidden;

@@ -8,13 +8,14 @@ const MessageContainer = () => (
         sequence={["", 200, "Hello, i'm"]}
         cursor={false}
         $main
+        $color={false}
       />
       &nbsp;
       <StyledTypeAnimation
         sequence={["", 800, "Damian"]}
         cursor={false}
-        style={{ color: "#FFCD00" }}
         $main
+        $color
       />
     </div>
     <div style={{ display: "flex" }}>
@@ -23,13 +24,14 @@ const MessageContainer = () => (
         wrapper="div"
         cursor={false}
         $main={false}
+        $color={false}
       />
       &nbsp;
       <StyledTypeAnimation
         sequence={["", 5500, "Web Developer"]}
-        style={{ color: "#FFCD00" }}
         cursor={false}
         $main={false}
+        $color
       />
     </div>
   </StyledMessageContainer>
