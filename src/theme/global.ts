@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     @media screen and (max-width: 600px) {
-      scroll-snap-type: y proximity;
+      touch-action: none;
     }
   }
   body {
