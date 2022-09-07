@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { presets } from "react-text-transition";
 import {
   StyledNavbar,
@@ -13,7 +13,19 @@ import { LocationContext } from "../utils/LocationContext";
 const NavBar = () => {
   const location = useContext(LocationContext);
 
-  const currentSection = navLinks.find(({ to }) => to === location?.hash)?.text;
+  const [header, setHeader] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (location) {
+      const currentSection = navLinks.find(
+        ({ to }) => to === location?.hash
+      )?.text;
+      if (currentSection != null) {
+        setHeader(currentSection);
+      }
+    }
+  }, [location]);
+
   return (
     <>
       <StyledNavbar>
@@ -29,7 +41,7 @@ const NavBar = () => {
       </StyledNavbar>
       <StyledMobileNavbar>
         <StyledTextTransition springConfig={presets.wobbly}>
-          <h2>{currentSection}</h2>
+          <h2>{header}</h2>
         </StyledTextTransition>
         <SidebarWrapper navLinks={navLinks} />
       </StyledMobileNavbar>

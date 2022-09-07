@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Hamburger from "./Hamburger";
 import { IconContainer, Sidebar } from "../NavBar.styled";
 import NavIcon from "./NavIcon";
-import { NavLinksProps } from "../../../utils/links";
+import { NavLinkProps } from "../../../utils/links";
 
 interface SidebarWrapperProps {
-  navLinks: NavLinksProps[];
+  navLinks: NavLinkProps[];
 }
 
 const SidebarWrapper = ({ navLinks }: SidebarWrapperProps) => {
@@ -15,7 +15,7 @@ const SidebarWrapper = ({ navLinks }: SidebarWrapperProps) => {
       <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
       <Sidebar isOpen={isOpen}>
         <IconContainer>
-          {navLinks.map(({ to, icon }: NavLinksProps) => (
+          {navLinks.map(({ to, icon }: NavLinkProps) => (
             <li key={`SidebarWrapperIcon-${to}`}>
               <NavIcon to={to}>{icon}</NavIcon>
             </li>
