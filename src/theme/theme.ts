@@ -84,6 +84,7 @@ import { DefaultTheme } from "styled-components";
 
 const defaultTheme: DefaultTheme = {
   borderRadius: "4px",
+  dropShadow: "filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));",
   palette: {
     common: {
       black: "#000",
