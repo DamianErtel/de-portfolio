@@ -15,9 +15,9 @@ const SidebarWrapper = ({ navLinks }: SidebarWrapperProps) => {
       <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
       <Sidebar isOpen={isOpen}>
         <IconContainer>
-          {navLinks.map(({ to, icon }: NavLinkProps, index) => (
+          {navLinks.map(({ to, icon, text }: NavLinkProps, index) => (
             <li key={`SidebarWrapperIcon-${to}`}>
-              <NavIcon index={index} to={to}>
+              <NavIcon text={text} index={index} to={to}>
                 {icon}
               </NavIcon>
             </li>

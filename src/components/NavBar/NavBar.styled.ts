@@ -70,31 +70,19 @@ export const StyledTextTransition = styled(TextTransition)`
   color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
-export const StyledMobileNavbar = styled.nav`
-  width: 100vw;
-  height: 60px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  @media screen and (min-width: 601px) {
-    display: none;
-  }
-`;
-
 export const StyledHamburger = styled.button<{ $isOpen: boolean }>`
   z-index: 100;
   width: 40px;
   height: 40px;
   padding: 10px;
+  position: fixed;
+  top: 30px;
+  right: 30px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-right: 30px;
   border: none;
   background: none;
   span {
@@ -121,6 +109,9 @@ export const StyledHamburger = styled.button<{ $isOpen: boolean }>`
       top: 0;
       ${({ $isOpen }) => $isOpen && "top: -8px;"};
     }
+  }
+  @media screen and (min-width: 601px) {
+    display: none;
   }
 `;
 

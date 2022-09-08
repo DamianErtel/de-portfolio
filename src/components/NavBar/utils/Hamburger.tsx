@@ -11,6 +11,7 @@ const Hamburger = ({ isOpen, setIsOpen }: HamburgerProps) => (
     type="button"
     onClick={() => setIsOpen((prevState) => !prevState)}
     $isOpen={isOpen}
+    aria-label="open sidebar"
   >
     <span />
     <span />

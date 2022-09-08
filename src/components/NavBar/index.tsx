@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StyledNavbar, StyledLink, StyledMobileNavbar } from "./NavBar.styled";
+import { StyledNavbar, StyledLink } from "./NavBar.styled";
 import { navLinks } from "../../utils/links";
 import SidebarWrapper from "./utils/SidebarWrapper";
 import { LocationContext } from "../utils/LocationContext";
@@ -20,9 +20,7 @@ const NavBar = () => {
           ))}
         </ul>
       </StyledNavbar>
-      <StyledMobileNavbar>
-        <SidebarWrapper navLinks={navLinks} />
-      </StyledMobileNavbar>
+      <SidebarWrapper navLinks={navLinks} />
     </>
   );
 };
