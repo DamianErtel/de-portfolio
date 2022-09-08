@@ -128,7 +128,7 @@ export const Sidebar = styled.div<{ isOpen: boolean }>`
   z-index: 10;
   width: 100%;
   max-width: ${({ isOpen }) => (isOpen ? "100px" : "0")};
-  height: 100%;
+  height: 100vh;
   position: fixed;
   right: 0;
   top: 0;
