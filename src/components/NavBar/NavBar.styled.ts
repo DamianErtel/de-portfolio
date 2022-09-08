@@ -20,14 +20,14 @@ export const IconWrapperLink = styled(Link)<{ $active: boolean }>`
     height: 40px;
     color: ${({ theme, $active }) =>
       $active
-        ? theme.palette.complementary.light
+        ? theme.palette.complementary.main
         : theme.palette.primary.contrastText};
   }
 `;
 
 export const StyledNavbar = styled.nav`
   display: flex;
-  background-color: ${({ theme }) => theme.palette.primary.light};
+  background: ${({ theme }) => theme.palette.primary.main};
   width: 100vw;
   height: 60px;
   position: fixed;
@@ -55,7 +55,7 @@ export const StyledLink = styled(Link)<{ $active: boolean }>`
   font-size: 2rem;
   color: ${({ theme, $active }) =>
     $active
-      ? theme.palette.complementary.light
+      ? theme.palette.complementary.main
       : theme.palette.primary.contrastText};
   font-weight: bold;
   text-decoration: none;
@@ -124,10 +124,11 @@ export const Sidebar = styled.div<{ isOpen: boolean }>`
   right: 0;
   top: 0;
   transition: max-width 0.3s ease-in-out;
-  background-color: ${({ theme }) => theme.palette.primary.light};
+  background-color: ${({ theme }) => theme.palette.primary.main};
   display: flex;
   flex-flow: column;
   overflow: hidden;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.25));
   a {
     text-decoration: none;
   }

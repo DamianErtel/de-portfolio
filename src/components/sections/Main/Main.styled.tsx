@@ -35,7 +35,6 @@ export const StyledMessageContainer = styled.article`
   flex-direction: column;
   min-width: 360px;
   font-size: 4rem;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   @media screen and (max-width: 600px) {
     min-width: 255px;
     max-width: 255px;
@@ -49,7 +48,7 @@ export const StyledTypeAnimation = styled(TypeAnimation)<{
   font-size: ${({ $main }) => ($main ? "4rem" : "3rem")};
   color: ${({ $color, theme }) =>
     $color
-      ? theme.palette.complementary.light
+      ? theme.palette.complementary.main
       : theme.palette.primary.contrastText};
   @media screen and (max-width: 600px) {
     font-size: ${({ $main }) => ($main ? "3rem" : "2rem")};

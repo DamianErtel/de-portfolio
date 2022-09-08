@@ -21,17 +21,18 @@ const BaseButton = styled.button<{ variant?: string }>`
       case "secondary":
         return `
                 background: none;
-                border: 2px solid ${theme.palette.secondary.dark}; 
-                color: ${theme.palette.primary.contrastText};
+                border: 2px solid ${theme.palette.secondary.main}; 
+                color: ${theme.palette.secondary.main};
                 &:hover {
-                    background-color: ${theme.palette.secondary.dark};
+                    background-color: ${theme.palette.secondary.main};
                     color: ${theme.palette.secondary.contrastText};
                 };
                 `;
       default:
         return `
-                background-color: ${theme.palette.complementary.main};
-                color: ${theme.palette.complementary.contrastText};
+                background: none;
+                border: 2px solid ${theme.palette.complementary.main};
+                color: ${theme.palette.complementary.main};
                 &:hover {
                     background-color: ${theme.palette.complementary.main};
                     color: ${theme.palette.complementary.contrastText};

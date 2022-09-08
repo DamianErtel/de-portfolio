@@ -7,12 +7,6 @@ export const Container = styled.div`
   justify-content: center;
   padding-top: 60px;
   height: 100%;
-  h1,
-  span,
-  p,
-  button {
-    ${({ theme }) => theme.dropShadow};
-  }
 `;
 
 export const TitleWrapper = styled.div`
@@ -23,7 +17,7 @@ export const TitleWrapper = styled.div`
     font-size: 4rem;
     display: inline;
     span {
-      color: ${({ theme }) => theme.palette.complementary.light};
+      color: ${({ theme }) => theme.palette.complementary.main};
     }
   }
   margin-bottom: 30px;
@@ -63,27 +57,48 @@ export const TextButton = styled.button<{ $active: boolean }>`
   position: relative;
   font-size: 2.4rem;
   cursor: pointer;
+  text-align: left;
   color: ${({ theme, $active }) =>
     $active
-      ? theme.palette.complementary.light
+      ? theme.palette.complementary.main
       : theme.palette.primary.contrastText};
-
+  @media screen and (min-width: 601px) {
+    transform: translateX(${({ $active }) => ($active ? "6px" : "0")});
+  }
+  @media screen and (max-width: 600px) {
+    transform: translateY(${({ $active }) => ($active ? "-6px" : "0")});
+  }
+  transition: all 0.3s linear;
   span {
-    transition: color 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &:hover {
-      color: ${({ theme }) => theme.palette.complementary.light};
+      color: ${({ theme }) => theme.palette.complementary.main};
+    }
+  }
+  &::before {
+    content: "";
+    width: 6px;
+    height: 100%;
+    position: absolute;
+    left: 130px;
+    top: 0;
+    background-color: ${({ theme }) => theme.palette.primary.main};
+    @media screen and (max-width: 600px) {
+      display: none;
     }
   }
   &::after {
-    transition: all 0.2s ease-in-out;
     content: "";
     width: 6px;
     height: 100%;
     position: absolute;
     left: 136px;
     top: 0;
-    background-color: ${({ theme }) => theme.palette.complementary.light};
-    opacity: ${({ $active }) => ($active ? "1" : "0")};
+    transition: all 0.3s linear;
+    background-color: ${({ theme, $active }) =>
+      $active
+        ? theme.palette.complementary.main
+        : theme.palette.secondary.main};
     @media screen and (max-width: 600px) {
       display: none;
     }
@@ -96,11 +111,14 @@ export const TextWrapper = styled.article`
   line-height: 34px;
   display: flex;
   flex-wrap: wrap;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   width: 340px;
   font-size: 1.8rem;
   align-items: center;
   color: ${({ theme }) => theme.palette.primary.contrastText};
+  span:nth-child(odd) {
+    color: ${({ theme }) => theme.palette.complementary.main};
+  }
 `;
 
 export const Divider = styled.div`

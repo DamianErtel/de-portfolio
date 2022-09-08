@@ -17,7 +17,6 @@ declare module "styled-components" {
       };
       primary: IPalette;
       secondary: IPalette;
-      additional: IPalette;
       complementary: IPalette;
     };
   }
