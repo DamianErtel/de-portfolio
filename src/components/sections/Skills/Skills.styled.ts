@@ -39,6 +39,7 @@ export const MenuWrapper = styled.div`
   width: 522px;
   @media screen and (max-width: 600px) {
     flex-direction: column;
+    width: auto;
   }
 `;
 
