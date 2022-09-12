@@ -5,7 +5,7 @@ const MessageContainer = () => (
   <StyledMessageContainer>
     <div style={{ display: "flex" }}>
       <StyledTypeAnimation
-        sequence={["", 200, "Hello, i'm"]}
+        sequence={["", 200, "Hello, I'm"]}
         cursor={false}
         $main
         $color={false}
@@ -20,7 +20,7 @@ const MessageContainer = () => (
     </div>
     <div style={{ display: "flex" }}>
       <StyledTypeAnimation
-        sequence={["", 1500, "Frontend", 500, "Backend", 500, "Fullstack"]}
+        sequence={["", 1500, "Frontend", 300, "Backend", 300, "Fullstack"]}
         wrapper="div"
         cursor={false}
         $main={false}
@@ -28,7 +28,7 @@ const MessageContainer = () => (
       />
       &nbsp;
       <StyledTypeAnimation
-        sequence={["", 5500, "Web Developer"]}
+        sequence={["", 4900, "Web Developer"]}
         cursor={false}
         $main={false}
         $color
