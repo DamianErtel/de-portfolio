@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import type { HeadFC, PageProps } from "gatsby";
+import React, { useMemo, useState } from "react";
+import type { HeadFC } from "gatsby";
 import Layout from "../components/utils/Layout";
 import Main from "../components/sections/Main";
 import Skills from "../components/sections/Skills";
@@ -10,27 +10,13 @@ import {
   LocationContextProps,
 } from "../components/utils/LocationContext";
 
-const Index = ({ location }: PageProps) => {
-  const [contextValue, setContextValue] = useState<LocationContextProps>({
-    location,
-    scrollIndex: 0,
-  });
+const Index = () => {
+  const [scrollIndex, setScrollIndex] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const index = window.scrollY / window.innerHeight;
-      const roundIndex = Math.round(index);
-      if (contextValue?.scrollIndex !== roundIndex) {
-        setContextValue({ location, scrollIndex: roundIndex });
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [location, contextValue]);
+  const contextValue = useMemo<LocationContextProps>(
+    () => ({ scrollIndex, setScrollIndex }),
+    [scrollIndex]
+  );
 
   return (
     <LocationContext.Provider value={contextValue}>

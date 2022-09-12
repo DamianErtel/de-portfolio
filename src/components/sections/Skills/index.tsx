@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { StyledSection } from "../Main/Main.styled";
+import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import {
   frontendStack,
   backendStack,
@@ -14,16 +15,23 @@ import {
   TitleWrapper,
   Divider,
 } from "./Skills.styled";
+import useChangeSectionIndex from "../../../hooks/useChangeSectionIndex";
 
 const stackArray = [frontendStack, backendStack, otherStack];
 
 const Skills = () => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
+
+  useChangeSectionIndex({ isVisible, index: 1 });
+
   const [currentStack, setCurrentStack] = useState(frontendStack);
   return (
     <StyledSection id="skills">
       <Container>
         <TitleWrapper>
-          <h1>
+          <h1 ref={ref}>
             <span>Technologies</span> i&apos;ve used in my projects
           </h1>
         </TitleWrapper>
