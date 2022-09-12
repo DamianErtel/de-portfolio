@@ -1,18 +1,20 @@
-import { RefObject, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import useChangeSectionIndex from "./useChangeSectionIndex";
 
 interface Args extends IntersectionObserverInit {
   freezeOnceVisible?: boolean;
+  index: number;
 }
 
-function useIntersectionObserver(
-  elementRef: RefObject<Element>,
-  {
-    threshold = 0.5,
-    root = null,
-    rootMargin = "0%",
-    freezeOnceVisible = false,
-  }: Args
-): IntersectionObserverEntry | undefined {
+function useIntersectionObserver({
+  threshold = 0.5,
+  root = null,
+  rootMargin = "0%",
+  freezeOnceVisible = false,
+  index = 0,
+}: Args) {
+  const elementRef = useRef(null);
+
   const [entry, setEntry] = useState<IntersectionObserverEntry>();
 
   const frozen = entry?.isIntersecting && freezeOnceVisible;
@@ -20,6 +22,8 @@ function useIntersectionObserver(
   const updateEntry = ([entry]: IntersectionObserverEntry[]): void => {
     setEntry(entry);
   };
+
+  console.log("XD");
 
   useEffect(() => {
     const node = elementRef?.current; // DOM Ref
@@ -37,7 +41,9 @@ function useIntersectionObserver(
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [elementRef, JSON.stringify(threshold), root, rootMargin, frozen]);
 
-  return entry;
+  useChangeSectionIndex({ isVisible: !!entry?.isIntersecting, index });
+
+  return { elementRef };
 }
 
 export default useIntersectionObserver;

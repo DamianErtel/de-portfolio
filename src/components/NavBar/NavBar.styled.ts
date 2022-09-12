@@ -138,4 +138,7 @@ export const Sidebar = styled.div<{ isOpen: boolean }>`
   svg {
     font-size: 2.4rem;
   }
+  @media screen and (min-width: 601px) {
+    display: none;
+  }
 `;
