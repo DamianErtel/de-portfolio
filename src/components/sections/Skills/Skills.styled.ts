@@ -84,7 +84,13 @@ export const TextButton = styled.button<{ $active: boolean }>`
     top: 0;
     background-color: ${({ theme }) => theme.palette.primary.main};
     @media screen and (max-width: 600px) {
-      display: none;
+          transition: width 0.2s ease;
+      width: 0;
+      height: 2px;
+      top: 30px;
+      left: 0;
+      background-color ${({ theme }) => theme.palette.complementary.main};
+      ${({ $active }) => $active && "width: 100%"};
     }
   }
   &::after {
@@ -118,6 +124,11 @@ export const TextWrapper = styled.article`
   color: ${({ theme }) => theme.palette.primary.contrastText};
   span:nth-child(odd) {
     color: ${({ theme }) => theme.palette.complementary.main};
+  }
+  @media only screen and (max-width: 600px) {
+    margin: auto;
+    justify-content: center;
+    width: 100%;
   }
 `;
 
