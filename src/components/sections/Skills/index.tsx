@@ -1,57 +1,35 @@
-import React, { useState, useRef } from "react";
-import { StyledSection } from "../Main/Main.styled";
+import React, { useState } from "react";
+import { SectionStyled } from "../../../commonStyles/section.styled";
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
-import {
-  frontendStack,
-  backendStack,
-  otherStack,
-} from "../../../utils/content";
-import {
-  Container,
-  MenuWrapper,
-  ButtonsWrapper,
-  TextWrapper,
-  TextButton,
-  TitleWrapper,
-  Divider,
-} from "./Skills.styled";
+import { IContent, techStack } from "../../../utils/content";
+import { Container, TitleWrapper } from "./Skills.styled";
+import PickMenu from "../../PickMenu";
 
-const stackArray = [frontendStack, backendStack, otherStack];
+const stackArray = techStack;
 
 const Skills = () => {
   const { elementRef } = useIntersectionObserver({ index: 1 });
 
-  const [currentStack, setCurrentStack] = useState(frontendStack);
+  const [currentStack, setCurrentStack] = useState<IContent>(techStack[0]);
   return (
-    <StyledSection ref={elementRef} id="skills">
+    <SectionStyled ref={elementRef} id="skills">
       <Container>
         <TitleWrapper>
           <h1>
             <span>Technologies</span> i&apos;ve used in my projects
           </h1>
         </TitleWrapper>
-        <MenuWrapper>
-          <ButtonsWrapper>
-            {stackArray.map((stack) => (
-              <TextButton
-                $active={currentStack.name === stack.name}
-                type="button"
-                key={`stack-button-${stack.name}`}
-                onClick={() => setCurrentStack(stack)}
-              >
-                <span>{stack.name}</span>
-              </TextButton>
-            ))}
-          </ButtonsWrapper>
-          <Divider />
-          <TextWrapper>
-            {currentStack.value.map((text) => (
-              <span key={text}>{text},&nbsp;</span>
-            ))}
-          </TextWrapper>
-        </MenuWrapper>
+        <PickMenu
+          contentArray={stackArray}
+          currentContent={currentStack}
+          setCurrentContent={setCurrentStack}
+        >
+          {currentStack.value.map((text) => (
+            <span key={text}>{text},&nbsp;</span>
+          ))}
+        </PickMenu>
       </Container>
-    </StyledSection>
+    </SectionStyled>
   );
 };
 

@@ -1,10 +1,5 @@
 import styled from "styled-components";
 import { TypeAnimation } from "react-type-animation";
-import SectionStyled from "../../../commonStyles/section.styled";
-
-export const StyledSection = styled(SectionStyled)`
-  background-color: ${({ theme }) => theme.palette.primary.main};
-`;
 
 export const Container = styled.div`
   display: flex;

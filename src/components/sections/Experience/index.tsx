@@ -1,12 +1,13 @@
 import React from "react";
-import { Container, StyledSection } from "../Main/Main.styled";
+import { Container } from "../Main/Main.styled";
+import { SectionStyled } from "../../../commonStyles/section.styled";
 
 const Experience = () => (
-  <StyledSection id="experience">
+  <SectionStyled id="experience">
     <Container>
       <p>EXPERIENCE</p>
     </Container>
-  </StyledSection>
+  </SectionStyled>
 );
 
 export default Experience;

@@ -1,4 +1,11 @@
-export const frontendStack = {
+export type NonEmptyArr<T> = [T, ...T[]];
+
+export interface IContent {
+  name: string;
+  value: NonEmptyArr<string>;
+}
+
+export const frontendStack: IContent = {
   name: "Frontend",
   value: [
     "Javascript",
@@ -13,7 +20,7 @@ export const frontendStack = {
   ],
 };
 
-export const backendStack = {
+export const backendStack: IContent = {
   name: "Backend",
   value: [
     "Node.js, Express",
@@ -23,7 +30,13 @@ export const backendStack = {
   ],
 };
 
-export const otherStack = {
+export const otherStack: IContent = {
   name: "Other",
   value: ["Apache", "Linux", "MacOS", "Docker"],
 };
+
+export const techStack: NonEmptyArr<IContent> = [
+  frontendStack,
+  backendStack,
+  otherStack,
+];

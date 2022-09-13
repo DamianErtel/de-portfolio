@@ -1,5 +1,6 @@
 import React from "react";
-import { ButtonContainer, Container, StyledSection } from "./Main.styled";
+import { ButtonContainer, Container } from "./Main.styled";
+import { SectionStyled } from "../../../commonStyles/section.styled";
 import MessageContainer from "./components/MessageContainer";
 import BaseButton from "../../../commonStyles/buttons.styled";
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
@@ -7,7 +8,7 @@ import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 const Main = () => {
   const { elementRef } = useIntersectionObserver({ index: 0 });
   return (
-    <StyledSection ref={elementRef} id="home">
+    <SectionStyled ref={elementRef} id="home">
       <Container>
         <MessageContainer />
         <ButtonContainer>
@@ -19,7 +20,7 @@ const Main = () => {
           </BaseButton>
         </ButtonContainer>
       </Container>
-    </StyledSection>
+    </SectionStyled>
   );
 };
 

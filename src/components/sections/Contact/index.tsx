@@ -1,12 +1,13 @@
 import React from "react";
-import { Container, StyledSection } from "../Main/Main.styled";
+import { Container } from "../Main/Main.styled";
+import { SectionStyled } from "../../../commonStyles/section.styled";
 
 const Contact = () => (
-  <StyledSection id="contact">
+  <SectionStyled id="contact">
     <Container>
       <p>CONTACT</p>
     </Container>
-  </StyledSection>
+  </SectionStyled>
 );
 
 export default Contact;
