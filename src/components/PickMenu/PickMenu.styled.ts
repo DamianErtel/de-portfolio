@@ -87,7 +87,7 @@ export const TextButton = styled.button<{ $active: boolean }>`
   }
   &::after {
     content: "";
-    width: 6px;
+    width: 5px;
     height: 100%;
     position: absolute;
     left: 136px;

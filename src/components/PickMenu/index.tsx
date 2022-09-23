@@ -17,11 +17,11 @@ const PickMenu = ({ content }: PickMenuProps) => {
   return (
     <MenuWrapper>
       <ButtonsWrapper>
-        {content.map(({ name }, index) => (
+        {content.map(({ name, id }, index) => (
           <TextButton
             $active={currentContentIndex === index}
             type="button"
-            key={`content-button-${name}`}
+            key={id}
             onClick={() => setCurrentContentIndex(index)}
           >
             <span>{name}</span>

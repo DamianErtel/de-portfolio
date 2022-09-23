@@ -3,34 +3,41 @@ import BaseButton from "../commonStyles/buttons.styled";
 
 export type NonEmptyArr<T> = [T, ...T[]];
 
-export type IContent = {
+export interface ID {
+  id: string;
+}
+
+export interface IContent extends ID {
   name: string;
   value: string;
-};
+}
 
-export type IProject = {
+export interface IProject extends ID {
   name: string;
   value: string | ReactNode;
   link: string;
-};
+}
 
-export type IEmployer = {
+export interface IEmployer extends ID {
   name: string;
   value: ReactNode;
-};
+}
 
-const frontendStack: IContent = {
+const frontendStack: IContent & ID = {
+  id: "frontendStack",
   name: "Frontend",
   value:
     "Javascript/Typescript, React, Gatsby, Styled-Components, Redux, MUI, ",
 };
 
 const backendStack: IContent = {
+  id: "backendStack",
   name: "Backend",
   value: "Node.js, Express, GraphQL, ApolloServer, Server-Side-Rendering",
 };
 
 const otherStack: IContent = {
+  id: "otherStack",
   name: "Other",
   value: "Apache, Linux, MacOS, Docker",
 };
@@ -42,8 +49,9 @@ export const techStack: NonEmptyArr<IContent> = [
 ];
 
 const affee: IEmployer = {
+  id: "affeeEmployer",
   name: "Affee360",
-  value: [
+  value: (
     <>
       <h2>
         Fullstack Developer{" "}
@@ -62,13 +70,14 @@ const affee: IEmployer = {
         </li>
         <li>Maintaining ubuntu server.</li>
       </ul>
-    </>,
-  ],
+    </>
+  ),
 };
 
 export const employers: NonEmptyArr<IEmployer> = [affee];
 export const projects: NonEmptyArr<IProject> = [
   {
+    id: "akademiaProject",
     name: "Akademia",
     value: (
       <>
@@ -92,6 +101,7 @@ export const projects: NonEmptyArr<IProject> = [
     link: "https://www.akademia.tytan.com",
   },
   {
+    id: "zzpProject",
     name: "ZZPhuis",
     value: (
       <>
@@ -107,6 +117,7 @@ export const projects: NonEmptyArr<IProject> = [
     link: "https://www.zzphuis.nl",
   },
   {
+    id: "portfolioProject",
     name: "Portfolio",
     value: (
       <>
