@@ -63,6 +63,7 @@ export const TextButton = styled.button<{ $active: boolean }>`
   @media screen and (max-width: 600px) {
     transform: translateY(${({ $active }) => ($active ? "-6px" : "0")});  
     text-align: center;
+    width: auto;
   }
   &::before {
     content: "";
@@ -113,8 +114,9 @@ export const TextWrapper = styled.article`
   font-size: 1.8rem;
   align-items: center;
   color: ${({ theme }) => theme.palette.primary.contrastText};
-  span:nth-child(odd) {
+  span {
     color: ${({ theme }) => theme.palette.complementary.main};
+    white-space: nowrap;
   }
   @media screen and (max-width: 720px) {
     width: 330px;
@@ -123,6 +125,7 @@ export const TextWrapper = styled.article`
     margin: auto;
     justify-content: center;
     width: 90%;
+    min-height: 300px;
   }
   a {
     text-decoration: none;
@@ -130,6 +133,10 @@ export const TextWrapper = styled.article`
       text-decoration: underline;
       text-decoration-color: ${({ theme }) => theme.palette.complementary.main};
     }
+  }
+  & > a {
+    text-decoration: none;
+    margin: 20px auto 0;
   }
   h2 {
     font-size: 2.5rem;

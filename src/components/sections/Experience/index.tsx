@@ -17,9 +17,6 @@ const Experience = () => {
             My <span>Experience</span>
           </h1>
         </TitleWrapper>
-        <TitleWrapper>
-          <h2>Where I&apos;ve worked</h2>
-        </TitleWrapper>
         <PickMenu content={employers} />
       </Container>
     </SectionStyled>

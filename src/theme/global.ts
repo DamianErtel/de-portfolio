@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     &::-webkit-scrollbar {
       display: none;
     }
+    background-color: ${({ theme }) => theme.palette.primary.main};
   }
 `;
 

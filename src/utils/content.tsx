@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import BaseButton from "../commonStyles/buttons.styled";
 
 export type NonEmptyArr<T> = [T, ...T[]];
 
@@ -79,7 +80,13 @@ export const projects: NonEmptyArr<IProject> = [
           . Made for managing live events/trainings and on-line webinars, with
           addition of blog functionality
         </p>
-        <a href="https://akademia.tytan.com">Link</a>
+        <BaseButton
+          as="a"
+          href="https://akademia.tytan.com"
+          variant="secondary"
+        >
+          Link
+        </BaseButton>
       </>
     ),
     link: "https://www.akademia.tytan.com",
@@ -92,17 +99,21 @@ export const projects: NonEmptyArr<IProject> = [
           Website for managing live events/trainings and on-line webinars, with
           addition of blog functionality
         </p>
-        <a href="https://www.zzphuis.nl">Link</a>
+        <BaseButton as="a" href="https://www.zzphuis.nl" variant="secondary">
+          Link
+        </BaseButton>
       </>
     ),
     link: "https://www.zzphuis.nl",
   },
   {
-    name: "Porftolio",
+    name: "Portfolio",
     value: (
       <>
         <p>This portfolio site made with Gatsby</p>
-        <a href="#home">Link</a>
+        <BaseButton as="a" href="#home" variant="secondary">
+          Link
+        </BaseButton>
       </>
     ),
     link: "#home",
