@@ -4,7 +4,10 @@ export const MenuWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 522px;
+  width: 700px;
+  @media screen and (max-width: 720px) {
+    width: 522px;
+  }
   @media screen and (max-width: 600px) {
     flex-direction: column;
     width: auto;
@@ -20,8 +23,9 @@ export const ButtonsWrapper = styled.div`
   @media screen and (max-width: 600px) {
     flex-direction: row;
     margin: 20px auto;
-    width: 300px;
+    width: 95vw;
     height: auto;
+    justify-content: space-evenly;
   }
 `;
 
@@ -38,9 +42,17 @@ export const TextButton = styled.button<{ $active: boolean }>`
   background: none;
   border: none;
   position: relative;
+  width: 96px;
   font-size: 2.4rem;
   cursor: pointer;
   text-align: left;
+  transition: all 0.3s linear;
+  span {
+        transition: all 0.3s ease-in-out;
+        &:hover {
+              color: ${({ theme }) => theme.palette.complementary.main};
+        }
+  }
   color: ${({ theme, $active }) =>
     $active
       ? theme.palette.complementary.main
@@ -49,25 +61,21 @@ export const TextButton = styled.button<{ $active: boolean }>`
     transform: translateX(${({ $active }) => ($active ? "6px" : "0")});
   }
   @media screen and (max-width: 600px) {
-    transform: translateY(${({ $active }) => ($active ? "-6px" : "0")});
-  }
-  transition: all 0.3s linear;
-  span {
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      color: ${({ theme }) => theme.palette.complementary.main};
-    }
+    transform: translateY(${({ $active }) => ($active ? "-6px" : "0")});  
+    text-align: center;
   }
   &::before {
     content: "";
-    width: 6px;
+    padding-left: 1px;
+    width: 7px;
     height: 100%;
     position: absolute;
-    left: 130px;
+    left: 129px;
     top: 0;
     background-color: ${({ theme }) => theme.palette.primary.main};
-    @media screen and (max-width: 600px) {
-          transition: width 0.2s ease;
+    @media screen and (max-width: 600px) {  
+      padding-left: 0;
+      transition: width 0.2s ease;
       width: 0;
       height: 2px;
       top: 30px;
@@ -101,16 +109,48 @@ export const TextWrapper = styled.article`
   display: flex;
   flex-wrap: wrap;
   letter-spacing: 3px;
-  width: 340px;
+  width: 520px;
   font-size: 1.8rem;
   align-items: center;
   color: ${({ theme }) => theme.palette.primary.contrastText};
   span:nth-child(odd) {
     color: ${({ theme }) => theme.palette.complementary.main};
   }
+  @media screen and (max-width: 720px) {
+    width: 330px;
+  }
   @media only screen and (max-width: 600px) {
     margin: auto;
     justify-content: center;
-    width: 100%;
+    width: 90%;
+  }
+  a {
+    text-decoration: none;
+    @media screen and (max-width: 600px) {
+      text-decoration: underline;
+      text-decoration-color: ${({ theme }) => theme.palette.complementary.main};
+    }
+  }
+  h2 {
+    font-size: 2.5rem;
+    @media screen and (max-width: 600px) {
+      font-size: 2.2rem;
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+  h3 {
+    font-size: 1.8rem;
+    @media screen and (max-width: 600px) {
+      font-size: 1.6rem;
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+  li {
+    font-size: 1.6rem;
+  }
+  ul {
+    padding-left: 20px;
   }
 `;

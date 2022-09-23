@@ -9,6 +9,7 @@ import {
   LocationContext,
   LocationContextProps,
 } from "../components/utils/LocationContext";
+import Projects from "../components/sections/Projects";
 
 const Index = () => {
   const [scrollIndex, setScrollIndex] = useState(0);
@@ -24,6 +25,7 @@ const Index = () => {
         <Main />
         <Skills />
         <Experience />
+        <Projects />
         <Contact />
       </Layout>
     </LocationContext.Provider>

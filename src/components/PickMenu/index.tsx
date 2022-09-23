@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { useState } from "react";
 import {
   ButtonsWrapper,
   Divider,
@@ -6,37 +6,30 @@ import {
   TextButton,
   TextWrapper,
 } from "./PickMenu.styled";
-import { IContent, NonEmptyArr } from "../../utils/content";
+import { IContent, IEmployer, NonEmptyArr } from "../../utils/content";
 
 interface PickMenuProps {
-  contentArray: NonEmptyArr<IContent>;
-  currentContent: IContent;
-  setCurrentContent: (value: IContent) => void;
-  children: ReactNode;
+  content: NonEmptyArr<IContent | IEmployer>;
 }
 
-const PickMenu = ({
-  contentArray,
-  currentContent,
-  setCurrentContent,
-  children,
-}: PickMenuProps) => {
+const PickMenu = ({ content }: PickMenuProps) => {
+  const [currentContentIndex, setCurrentContentIndex] = useState(0);
   return (
     <MenuWrapper>
       <ButtonsWrapper>
-        {contentArray.map((content) => (
+        {content.map(({ name }, index) => (
           <TextButton
-            $active={currentContent.name === content.name}
+            $active={currentContentIndex === index}
             type="button"
-            key={`content-button-${content.name}`}
-            onClick={() => setCurrentContent(content)}
+            key={`content-button-${name}`}
+            onClick={() => setCurrentContentIndex(index)}
           >
-            <span>{content.name}</span>
+            <span>{name}</span>
           </TextButton>
         ))}
       </ButtonsWrapper>
       <Divider />
-      <TextWrapper>{children}</TextWrapper>
+      <TextWrapper>{content[currentContentIndex].value}</TextWrapper>
     </MenuWrapper>
   );
 };

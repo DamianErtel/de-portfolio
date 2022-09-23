@@ -20,6 +20,10 @@ export const TitleWrapper = styled.div`
       color: ${({ theme }) => theme.palette.complementary.main};
     }
   }
+  h2 {
+    font-size: 3rem;
+    font-weight: 400;
+  }
   margin-bottom: 30px;
   @media screen and (max-width: 600px) {
     width: 300px;
