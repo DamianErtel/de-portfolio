@@ -1,10 +1,16 @@
-import React, { useContext } from "react";
-import { StyledNavbar, StyledLink } from "./NavBar.styled";
+import React, { Dispatch, SetStateAction, useContext } from "react";
+import { Lightbulb, DarkMode } from "@styled-icons/material-outlined";
+import { StyledNavbar, StyledLink, DarkModeButton } from "./NavBar.styled";
 import { navLinks } from "../../utils/links";
 import SidebarWrapper from "./utils/SidebarWrapper";
 import { LocationContext } from "../utils/LocationContext";
 
-const NavBar = () => {
+interface NavBarProps {
+  setTheme: Dispatch<SetStateAction<boolean>>;
+  theme: boolean;
+}
+
+const NavBar = ({ setTheme, theme }: NavBarProps) => {
   const { scrollIndex } = useContext(LocationContext);
 
   return (
@@ -19,8 +25,15 @@ const NavBar = () => {
             </li>
           ))}
         </ul>
+        <DarkModeButton
+          aria-label={`enable ${theme ? "dark" : "light"} mode`}
+          type="button"
+          onClick={() => setTheme((prevState: boolean) => !prevState)}
+        >
+          {theme ? <DarkMode /> : <Lightbulb />}
+        </DarkModeButton>
       </StyledNavbar>
-      <SidebarWrapper navLinks={navLinks} />
+      <SidebarWrapper setTheme={setTheme} theme={theme} navLinks={navLinks} />
     </>
   );
 };

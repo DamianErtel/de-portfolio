@@ -1,6 +1,6 @@
 import { DefaultTheme } from "styled-components";
 
-const defaultTheme: DefaultTheme = {
+const darkTheme: DefaultTheme = {
   borderRadius: "4px",
   dropShadow: "filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));",
   palette: {
@@ -9,12 +9,12 @@ const defaultTheme: DefaultTheme = {
       white: "#fff",
     },
     primary: {
-      main: "#FFF0F3",
-      contrastText: "#513E3E",
-    },
-    secondary: {
       main: "#513E3E",
       contrastText: "#FFF0F3",
+    },
+    secondary: {
+      main: "#FFF0F3",
+      contrastText: "#513E3E",
     },
     complementary: {
       main: "#BA1200",
@@ -23,4 +23,4 @@ const defaultTheme: DefaultTheme = {
   },
 };
 
-export default defaultTheme;
+export default darkTheme;

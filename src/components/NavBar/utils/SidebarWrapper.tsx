@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import Hamburger from "./Hamburger";
-import { IconContainer, Sidebar } from "../NavBar.styled";
+import { DarkModeButton, IconContainer, Sidebar } from "../NavBar.styled";
 import NavIcon from "./NavIcon";
 import { NavLinkProps } from "../../../utils/links";
+import { DarkMode, Lightbulb } from "@styled-icons/material-outlined";
 
 interface SidebarWrapperProps {
   navLinks: NavLinkProps[];
+  setTheme: Dispatch<SetStateAction<boolean>>;
+  theme: boolean;
 }
 
-const SidebarWrapper = ({ navLinks }: SidebarWrapperProps) => {
+const SidebarWrapper = ({ navLinks, setTheme, theme }: SidebarWrapperProps) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -22,6 +25,14 @@ const SidebarWrapper = ({ navLinks }: SidebarWrapperProps) => {
               </NavIcon>
             </li>
           ))}
+          <DarkModeButton
+            $mobile
+            aria-label={`enable ${theme ? "dark" : "light"} mode`}
+            type="button"
+            onClick={() => setTheme((prevState: boolean) => !prevState)}
+          >
+            {theme ? <DarkMode /> : <Lightbulb />}
+          </DarkModeButton>
         </IconContainer>
       </Sidebar>
     </>

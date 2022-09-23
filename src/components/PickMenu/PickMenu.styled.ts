@@ -30,8 +30,9 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const Divider = styled.div`
-  width: 6px;
+  min-width: 6px;
   height: 240px;
+  transition: all 0.3s ease-in-out;
   background-color: ${({ theme }) => theme.palette.primary.contrastText};
   @media screen and (max-width: 600px) {
     display: none;
@@ -68,16 +69,16 @@ export const TextButton = styled.button<{ $active: boolean }>`
   &::before {
     content: "";
     padding-left: 1px;
-    width: 7px;
+    min-width: 6px;
     height: 100%;
     position: absolute;
-    left: 129px;
+    left: 130px;
     top: 0;
     background-color: ${({ theme }) => theme.palette.primary.main};
     @media screen and (max-width: 600px) {  
       padding-left: 0;
-      transition: width 0.2s ease;
-      width: 0;
+      transition: width 0.3s ease;
+      min-width: 0;
       height: 2px;
       top: 30px;
       left: 0;
@@ -87,7 +88,7 @@ export const TextButton = styled.button<{ $active: boolean }>`
   }
   &::after {
     content: "";
-    width: 5px;
+    min-width: 6px;
     height: 100%;
     position: absolute;
     left: 136px;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { TypeAnimation } from "react-type-animation";
 
 export const Container = styled.div`
   display: flex;
@@ -29,23 +28,26 @@ export const StyledMessageContainer = styled.article`
   display: flex;
   flex-direction: column;
   min-width: 360px;
-  font-size: 4rem;
+  div {
+    font-size: 3.8rem;
+    span {
+      color: ${({ theme }) => theme.palette.complementary.main};
+    }
+  }
+  div:first-child {
+    font-size: 4rem;
+  }
   @media screen and (max-width: 600px) {
     min-width: 255px;
     max-width: 255px;
-  }
-`;
-
-export const StyledTypeAnimation = styled(TypeAnimation)<{
-  $main: boolean;
-  $color: boolean;
-}>`
-  font-size: ${({ $main }) => ($main ? "4rem" : "3rem")};
-  color: ${({ $color, theme }) =>
-    $color
-      ? theme.palette.complementary.main
-      : theme.palette.primary.contrastText};
-  @media screen and (max-width: 600px) {
-    font-size: ${({ $main }) => ($main ? "3rem" : "2rem")};
+    div {
+      font-size: 2rem;
+      span {
+        color: ${({ theme }) => theme.palette.complementary.main};
+      }
+    }
+    div:first-child {
+      font-size: 3rem;
+    }
   }
 `;

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
-import TextTransition from "react-text-transition";
 
 export const IconContainer = styled.ul`
   min-height: 300px;
@@ -59,15 +58,6 @@ export const StyledLink = styled(Link)<{ $active: boolean }>`
       : theme.palette.primary.contrastText};
   font-weight: bold;
   text-decoration: none;
-`;
-
-export const StyledTextTransition = styled(TextTransition)`
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
-  color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
 export const StyledHamburger = styled.button<{ $isOpen: boolean }>`
@@ -140,5 +130,31 @@ export const Sidebar = styled.div<{ isOpen: boolean }>`
   }
   @media screen and (min-width: 601px) {
     display: none;
+  }
+`;
+
+export const DarkModeButton = styled.button<{ $mobile?: boolean }>`
+  ${({ $mobile }) =>
+    $mobile
+      ? `
+        margin-top: 20px;
+      `
+      : `
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            margin-left: 20px;
+      `}
+  border: none;
+  cursor: pointer;
+  background: none;
+  transition: color 0.3s ease-in-out;
+  color: ${({ theme }) => theme.palette.primary.contrastText};
+  &:hover {
+    color: ${({ theme }) => theme.palette.complementary.main};
+  }
+  svg {
+    width: 40px;
+    height: 40px;
   }
 `;
