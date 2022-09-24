@@ -1,22 +1,28 @@
-import React from "react";
+import React, { Dispatch, SetStateAction, SyntheticEvent } from "react";
 import { StyledHamburger } from "../NavBar.styled";
 
 interface HamburgerProps {
   isOpen: boolean;
-  setIsOpen: (cb: (value: boolean) => boolean) => void;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const Hamburger = ({ isOpen, setIsOpen }: HamburgerProps) => (
-  <StyledHamburger
-    type="button"
-    onClick={() => setIsOpen((prevState) => !prevState)}
-    $isOpen={isOpen}
-    aria-label="open sidebar"
-  >
-    <span />
-    <span />
-    <span />
-  </StyledHamburger>
-);
+const Hamburger = ({ isOpen, setIsOpen }: HamburgerProps) => {
+  const handleClick = (e: SyntheticEvent) => {
+    e.stopPropagation();
+    setIsOpen((prevState) => !prevState);
+  };
+  return (
+    <StyledHamburger
+      type="button"
+      onMouseDown={handleClick}
+      $isOpen={isOpen}
+      aria-label={`${isOpen ? "Close" : "Open"} sidebar`}
+    >
+      <span />
+      <span />
+      <span />
+    </StyledHamburger>
+  );
+};
 
 export default Hamburger;

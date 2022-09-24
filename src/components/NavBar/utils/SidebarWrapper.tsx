@@ -1,9 +1,10 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction, useRef, useState } from "react";
+import { DarkMode, Lightbulb } from "@styled-icons/material-outlined";
 import Hamburger from "./Hamburger";
 import { DarkModeButton, IconContainer, Sidebar } from "../NavBar.styled";
 import NavIcon from "./NavIcon";
 import { NavLinkProps } from "../../../utils/links";
-import { DarkMode, Lightbulb } from "@styled-icons/material-outlined";
+import useOutsideAlerter from "../../../hooks/useOutsideClick";
 
 interface SidebarWrapperProps {
   navLinks: NavLinkProps[];
@@ -13,10 +14,19 @@ interface SidebarWrapperProps {
 
 const SidebarWrapper = ({ navLinks, setTheme, theme }: SidebarWrapperProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef(null);
+  const handleClickOutside = () => {
+    setIsOpen(false);
+  };
+  useOutsideAlerter({
+    ref,
+    callback: handleClickOutside,
+    currentState: isOpen,
+  });
   return (
     <>
       <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
-      <Sidebar isOpen={isOpen}>
+      <Sidebar ref={ref} isOpen={isOpen}>
         <IconContainer>
           {navLinks.map(({ to, icon, text }: NavLinkProps, index) => (
             <li key={`SidebarWrapperIcon-${to}`}>
