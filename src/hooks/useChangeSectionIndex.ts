@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { LocationContext } from "../components/utils/LocationContext";
+import { LocationContext } from "../utils/LocationContext";
 
 interface UseChangeSectionIndexProps {
   isVisible: boolean;

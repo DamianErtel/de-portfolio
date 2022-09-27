@@ -1,54 +1,52 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby minimal TypeScript starter
+  Welcome to my portfolio webiste.
 </h1>
 
-## 🚀 Quick start
+## About the project
 
-1.  **Create a Gatsby site.**
+1.  **Tech stack used.**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+    <ul>
+        <li>Typescript</li>
+        <li>Gatsby</li>
+        <li>React</li>
+        <li>Styled-Components</li>
+    </ul>
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
+2.  **Project structure.**
 
-2.  **Start developing.**
+   ```
+   └── src/
+        ├── commonStyles/
+        │   └── index.ts - styled components used across whole app.
+        ├── components/
+        │   ├── ...
+        │   └── Sections - this is where each section of the project is stored.
+        ├── hooks/ - this is where react hooks are stored.
+        │   └── ... 
+        ├── images/
+        │   └── ...
+        ├── pages/
+        │   ├── 404.tsx
+        │   └── index.tsx
+        ├── theme/
+        │   ├── darkTheme.ts - styled components theme used when the user switches to dark mode.
+        │   ├── global.ts - global style declaration.
+        │   └── theme.ts - default styled components theme.
+        └── utils/ - this folder contains static content, and LocationContext for some navigation ui elements.
+            └── ... 
+   ```
 
-    Navigate into your new site’s directory and start it up.
+3.  **Basic usage.**
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.tsx` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+    <ul>
+        <li>Usual developement starts with command - gatsby develop</li>
+        <li>To build app in order to later serve it - gatsby build</li>
+        <li>Example for serving app on your local network - gatsby build && gatsby serve -H 192.168.0.1 -p 9000
+            <br/> which will serve app on 192.168.0.1:9000
+        </li>
+        <li>In order to use these commands you must have gatsby-cli installed, more on that
+            <a href="https://www.gatsbyjs.com/docs/reference/gatsby-cli/" target="_blank" rel="noreferrer">here</a>
+        </li>
+        <li>If, for example, you would rather use 'npm start' instead of 'gatsby develop', check the package.json file for available scripts</li>
+    </ul>

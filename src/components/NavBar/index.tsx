@@ -3,7 +3,7 @@ import { Lightbulb, DarkMode } from "@styled-icons/material-outlined";
 import { StyledNavbar, StyledLink, DarkModeButton } from "./NavBar.styled";
 import { navLinks } from "../../utils/links";
 import SidebarWrapper from "./utils/SidebarWrapper";
-import { LocationContext } from "../utils/LocationContext";
+import { LocationContext } from "../../utils/LocationContext";
 
 interface NavBarProps {
   setTheme: Dispatch<SetStateAction<boolean>>;

@@ -8,7 +8,7 @@ import Contact from "../components/Sections/Contact";
 import {
   LocationContext,
   LocationContextProps,
-} from "../components/utils/LocationContext";
+} from "../utils/LocationContext";
 import Projects from "../components/Sections/Projects";
 
 const Index = () => {

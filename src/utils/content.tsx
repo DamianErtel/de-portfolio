@@ -82,7 +82,7 @@ export const projects: NonEmptyArr<IProject> = [
     value: (
       <>
         <p>
-          Website i&apos;ve worked on while working for{" "}
+          Website I&apos;ve worked on while working for{" "}
           <a href="https://www.affee360.com">
             <span>Affee360</span>
           </a>
@@ -106,8 +106,12 @@ export const projects: NonEmptyArr<IProject> = [
     value: (
       <>
         <p>
-          Website for managing live events/trainings and on-line webinars, with
-          addition of blog functionality
+          Website I&apos;ve worked on while working for{" "}
+          <a href="https://www.affee360.com">
+            <span>Affee360</span>
+          </a>
+          . Website for managing live events/trainings and on-line webinars,
+          with addition of blog functionality
         </p>
         <BaseButton as="a" href="https://www.zzphuis.nl" variant="secondary">
           Link

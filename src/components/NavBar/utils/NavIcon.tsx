@@ -1,6 +1,6 @@
 import React, { ReactNode, useContext } from "react";
 import { IconWrapperLink } from "../NavBar.styled";
-import { LocationContext } from "../../utils/LocationContext";
+import { LocationContext } from "../../../utils/LocationContext";
 
 interface NavIconProps {
   to: string;
