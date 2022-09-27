@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import BaseButton from "../commonStyles/buttons.styled";
+import { BaseButton } from "../commonStyles";
 
 export type NonEmptyArr<T> = [T, ...T[]];
 

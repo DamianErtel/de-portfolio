@@ -17,7 +17,7 @@ const darkTheme: DefaultTheme = {
       contrastText: "#513E3E",
     },
     complementary: {
-      main: "#BA1200",
+      main: "#e83c27",
       contrastText: "#FFF0F3",
     },
   },

@@ -1,9 +1,7 @@
 import React from "react";
-import { Container } from "../Main/Main.styled";
-import { SectionStyled } from "../../../commonStyles/section.styled";
+import { SectionStyled, TitleWrapper, Container } from "../../../commonStyles";
 import { employers } from "../../../utils/content";
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
-import { TitleWrapper } from "../Skills/Skills.styled";
 import PickMenu from "../../PickMenu";
 
 const Experience = () => {

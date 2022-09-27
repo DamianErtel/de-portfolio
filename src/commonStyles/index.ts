@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const BaseButton = styled.button<{ variant?: string }>`
+export const BaseButton = styled.button<{ variant?: string }>`
   width: 140px;
   height: 40px;
   font-size: 2rem;
@@ -42,4 +42,46 @@ const BaseButton = styled.button<{ variant?: string }>`
   }};
 `;
 
-export default BaseButton;
+export const SectionStyled = styled.section`
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: center;
+  font-size: 2rem;
+  background-color: ${({ theme }) => theme.palette.primary.main};
+  color: ${({ theme }) => theme.palette.primary.contrastText};
+  font-weight: bold;
+  @media screen and (max-width: 600px) {
+    height: auto;
+    margin: 200px 0;
+  }
+`;
+
+export const TitleWrapper = styled.div`
+  width: 420px;
+  text-align: center;
+  h1 {
+    font-weight: 400;
+    font-size: 4rem;
+    display: inline;
+    span {
+      color: ${({ theme }) => theme.palette.complementary.main};
+    }
+  }
+  h2 {
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  margin-bottom: 30px;
+  @media screen and (max-width: 600px) {
+    width: 300px;
+  }
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  height: 100%;
+`;

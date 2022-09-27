@@ -1,8 +1,7 @@
 import React from "react";
-import { SectionStyled } from "../../../commonStyles/section.styled";
+import { SectionStyled, TitleWrapper, Container } from "../../../commonStyles";
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import { techStack } from "../../../utils/content";
-import { Container, TitleWrapper } from "./Skills.styled";
 import PickMenu from "../../PickMenu";
 
 const Skills = () => {
