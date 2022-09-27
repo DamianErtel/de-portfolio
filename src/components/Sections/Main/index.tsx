@@ -1,7 +1,7 @@
 import React from "react";
 import { ButtonContainer } from "./Main.styled";
 import { SectionStyled, BaseButton, Container } from "../../../commonStyles";
-import MessageContainer from "./components/MessageContainer";
+import MessageContainer from "../../MessageContainer";
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 
 const Main = () => {

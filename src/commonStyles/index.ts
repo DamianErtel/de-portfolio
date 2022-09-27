@@ -85,3 +85,31 @@ export const Container = styled.div`
   padding-top: 60px;
   height: 100%;
 `;
+
+export const StyledMessageContainer = styled.article`
+  display: flex;
+  flex-direction: column;
+  min-width: 360px;
+  div {
+    font-size: 3.8rem;
+    span {
+      color: ${({ theme }) => theme.palette.complementary.main};
+    }
+  }
+  div:first-child {
+    font-size: 4rem;
+  }
+  @media screen and (max-width: 600px) {
+    min-width: 255px;
+    max-width: 255px;
+    div {
+      font-size: 2rem;
+      span {
+        color: ${({ theme }) => theme.palette.complementary.main};
+      }
+    }
+    div:first-child {
+      font-size: 3rem;
+    }
+  }
+`;

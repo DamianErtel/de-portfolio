@@ -1,15 +1,15 @@
 import React, { useMemo, useState } from "react";
 import type { HeadFC } from "gatsby";
-import Layout from "../components/utils/Layout";
-import Main from "../components/sections/Main";
-import Skills from "../components/sections/Skills";
-import Experience from "../components/sections/Experience";
-import Contact from "../components/sections/Contact";
+import Layout from "../components/Layout";
+import Main from "../components/Sections/Main";
+import Skills from "../components/Sections/Skills";
+import Experience from "../components/Sections/Experience";
+import Contact from "../components/Sections/Contact";
 import {
   LocationContext,
   LocationContextProps,
 } from "../components/utils/LocationContext";
-import Projects from "../components/sections/Projects";
+import Projects from "../components/Sections/Projects";
 
 const Index = () => {
   const [scrollIndex, setScrollIndex] = useState(0);
