@@ -3,11 +3,9 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Damian Ertel Portfolio`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://damianertel.github.io/de-portfolio`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
+  pathPrefix: "de-portfolio",
   graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-styled-components",
