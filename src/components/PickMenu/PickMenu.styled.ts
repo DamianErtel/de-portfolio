@@ -128,6 +128,31 @@ export const TextWrapper = styled.article`
     width: 90%;
     min-height: 300px;
   }
+  & > div > a {
+    width: 140px;
+    height: 40px;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      transform: scale(1.1);
+    }
+    background: none;
+    border: 2px solid ${({ theme }) => theme.palette.complementary.main};
+    color: ${({ theme }) => theme.palette.complementary.main};
+    &:hover {
+      background-color: ${({ theme }) => theme.palette.complementary.main};
+      color: ${({ theme }) => theme.palette.complementary.contrastText};
+    }
+    margin: 10px auto 0;
+  }
   a {
     text-decoration: none;
     @media screen and (max-width: 600px) {

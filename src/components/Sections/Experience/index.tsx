@@ -1,11 +1,26 @@
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 import { SectionStyled, TitleWrapper, Container } from "../../../commonStyles";
-import { employers } from "../../../utils/content";
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import PickMenu from "../../PickMenu";
+import { IEmployerQuery } from "../../../types";
+
+const employerQuery = graphql`
+  {
+    gcms {
+      employers {
+        id
+        name
+        value
+      }
+    }
+  }
+`;
 
 const Experience = () => {
   const { elementRef } = useIntersectionObserver({ index: 2 });
+
+  const data: IEmployerQuery = useStaticQuery(employerQuery);
 
   return (
     <SectionStyled ref={elementRef} id="experience">
@@ -15,7 +30,7 @@ const Experience = () => {
             My <span>Experience</span>
           </h1>
         </TitleWrapper>
-        <PickMenu content={employers} />
+        <PickMenu markdown content={data.gcms.employers} />
       </Container>
     </SectionStyled>
   );

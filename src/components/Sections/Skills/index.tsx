@@ -1,10 +1,21 @@
 import React from "react";
-import { useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import { SectionStyled, TitleWrapper, Container } from "../../../commonStyles";
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import { ISkillQuery } from "../../../types";
 import PickMenu from "../../PickMenu";
-import { skillQuery } from "../../../queries";
+
+const skillQuery = graphql`
+  {
+    gcms {
+      skills {
+        id
+        name
+        value
+      }
+    }
+  }
+`;
 
 const Skills = () => {
   const { elementRef } = useIntersectionObserver({ index: 1 });
@@ -19,7 +30,7 @@ const Skills = () => {
             <span>Technologies</span> i&apos;ve used in my projects
           </h1>
         </TitleWrapper>
-        <PickMenu content={data.gcms.skills} />
+        <PickMenu markdown={false} content={data.gcms.skills} />
       </Container>
     </SectionStyled>
   );

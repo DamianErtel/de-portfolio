@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Markdown from "markdown-to-jsx";
 import {
   ButtonsWrapper,
   Divider,
@@ -6,13 +7,14 @@ import {
   TextButton,
   TextWrapper,
 } from "./PickMenu.styled";
-import { IContent, IEmployer, NonEmptyArr } from "../../types";
+import { IContent, IEmployer, IProject, NonEmptyArr } from "../../types";
 
 interface PickMenuProps {
-  content: NonEmptyArr<IContent | IEmployer>;
+  content: NonEmptyArr<IContent | IEmployer | IProject>;
+  markdown: boolean;
 }
 
-const PickMenu = ({ content }: PickMenuProps) => {
+const PickMenu = ({ content, markdown }: PickMenuProps) => {
   const [currentContentIndex, setCurrentContentIndex] = useState(0);
   return (
     <MenuWrapper>
@@ -29,7 +31,13 @@ const PickMenu = ({ content }: PickMenuProps) => {
         ))}
       </ButtonsWrapper>
       <Divider />
-      <TextWrapper>{content[currentContentIndex].value}</TextWrapper>
+      {markdown ? (
+        <TextWrapper>
+          <Markdown>{content[currentContentIndex].value}</Markdown>
+        </TextWrapper>
+      ) : (
+        <TextWrapper>{content[currentContentIndex].value}</TextWrapper>
+      )}
     </MenuWrapper>
   );
 };
