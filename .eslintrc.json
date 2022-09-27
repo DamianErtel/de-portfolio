@@ -28,5 +28,5 @@
     "consistent-return": 0,
     "@typescript-eslint/no-shadow": 0
   },
-  "ignorePatterns": ["public", "gatsby-config.ts"]
+  "ignorePatterns": ["public", "gatsby-config.ts", "gatsby-graphql.ts"]
 }

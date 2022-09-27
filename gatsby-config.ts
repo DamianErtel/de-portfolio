@@ -29,6 +29,14 @@ const config: GatsbyConfig = {
       },
       __key: "pages",
     },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "GraphCMS",
+        fieldName: "gcms",
+        url: "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cl8kdighz1o4201ulaw4139sa/master",
+      },
+    },
   ],
 };
 

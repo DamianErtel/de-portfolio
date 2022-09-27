@@ -6,7 +6,7 @@ import {
   TextButton,
   TextWrapper,
 } from "./PickMenu.styled";
-import { IContent, IEmployer, NonEmptyArr } from "../../utils/content";
+import { IContent, IEmployer, NonEmptyArr } from "../../types";
 
 interface PickMenuProps {
   content: NonEmptyArr<IContent | IEmployer>;

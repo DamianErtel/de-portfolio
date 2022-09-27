@@ -1,52 +1,6 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { BaseButton } from "../commonStyles";
-
-export type NonEmptyArr<T> = [T, ...T[]];
-
-export interface ID {
-  id: string;
-}
-
-export interface IContent extends ID {
-  name: string;
-  value: string;
-}
-
-export interface IProject extends ID {
-  name: string;
-  value: string | ReactNode;
-  link: string;
-}
-
-export interface IEmployer extends ID {
-  name: string;
-  value: ReactNode;
-}
-
-const frontendStack: IContent & ID = {
-  id: "frontendStack",
-  name: "Frontend",
-  value:
-    "Javascript/Typescript, React, Gatsby, Styled-Components, Redux, MUI, ",
-};
-
-const backendStack: IContent = {
-  id: "backendStack",
-  name: "Backend",
-  value: "Node.js, Express, GraphQL, ApolloServer, Server-Side-Rendering",
-};
-
-const otherStack: IContent = {
-  id: "otherStack",
-  name: "Other",
-  value: "Apache, Linux, MacOS, Docker",
-};
-
-export const techStack: NonEmptyArr<IContent> = [
-  frontendStack,
-  backendStack,
-  otherStack,
-];
+import { IEmployer, IProject, NonEmptyArr } from "../types";
 
 const affee: IEmployer = {
   id: "affeeEmployer",

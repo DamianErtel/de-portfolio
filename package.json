@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "start": "gatsby clean && gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -25,6 +25,7 @@
     "gatsby-plugin-sharp": "^4.22.0",
     "gatsby-plugin-styled-components": "^5.22.0",
     "gatsby-source-filesystem": "^4.22.0",
+    "gatsby-source-graphql": "^4.24.0",
     "gatsby-transformer-sharp": "^4.22.0",
     "prettier": "^2.7.1",
     "react": "^18.1.0",
