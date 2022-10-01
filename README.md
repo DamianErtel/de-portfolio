@@ -1,10 +1,15 @@
 <h1 align="center">
-  Welcome to my portfolio webiste.
+  Welcome to my portfolio website.
 </h1>
 
 ## About the project
 
+<h3 align="center">
+  Simple portfolio page made with gatsby that uses Hygraph (formerly GraphCms) as cms.
+</h3>
+
 1.  **Tech stack used.**
+    
     <ul>
         <li>Typescript</li>
         <li>Gatsby</li>
