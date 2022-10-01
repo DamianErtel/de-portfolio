@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Markdown from "markdown-to-jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ButtonsWrapper,
   Divider,
@@ -33,10 +34,40 @@ const PickMenu = ({ content, markdown }: PickMenuProps) => {
       <Divider />
       {markdown ? (
         <TextWrapper>
-          <Markdown>{content[currentContentIndex].value}</Markdown>
+          <AnimatePresence mode="wait">
+            <motion.article
+              key={currentContentIndex}
+              initial={{ opacity: 0, position: "relative", bottom: 20 }}
+              animate={{ opacity: 1, bottom: 0 }}
+              whileInView={{ opacity: 1 }}
+              exit={{ bottom: -200, opacity: 0 }}
+              transition={{
+                bottom: { duration: 0.425 },
+                opacity: { duration: 0.35 },
+              }}
+            >
+              <Markdown>{content[currentContentIndex].value}</Markdown>
+            </motion.article>
+          </AnimatePresence>
         </TextWrapper>
       ) : (
-        <TextWrapper>{content[currentContentIndex].value}</TextWrapper>
+        <TextWrapper>
+          <AnimatePresence mode="wait">
+            <motion.article
+              key={currentContentIndex}
+              initial={{ opacity: 0, position: "relative", bottom: 20 }}
+              animate={{ opacity: 1, bottom: 0 }}
+              whileInView={{ opacity: 1 }}
+              exit={{ bottom: -100, opacity: 0 }}
+              transition={{
+                bottom: { duration: 0.425 },
+                opacity: { duration: 0.35 },
+              }}
+            >
+              {content[currentContentIndex].value}
+            </motion.article>
+          </AnimatePresence>
+        </TextWrapper>
       )}
     </MenuWrapper>
   );

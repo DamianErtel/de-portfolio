@@ -1,9 +1,10 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { SectionStyled, TitleWrapper, Container } from "../../../commonStyles";
+import { SectionStyled, Container } from "../../../commonStyles";
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import PickMenu from "../../PickMenu";
 import { IProjectQuery } from "../../../types";
+import AnimatedTitleWrapper from "../../AnimatedTitleWrapper";
 
 const projectQuery = graphql`
   {
@@ -25,11 +26,11 @@ const Projects = () => {
   return (
     <SectionStyled ref={elementRef} id="projects">
       <Container>
-        <TitleWrapper>
+        <AnimatedTitleWrapper>
           <h1>
             My <span>projects</span>
           </h1>
-        </TitleWrapper>
+        </AnimatedTitleWrapper>
         <PickMenu markdown content={data.gcms.projects} />
       </Container>
     </SectionStyled>

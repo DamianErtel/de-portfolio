@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const MenuWrapper = styled.div`
   display: flex;
@@ -7,6 +8,7 @@ export const MenuWrapper = styled.div`
   width: 700px;
   @media screen and (max-width: 720px) {
     width: 522px;
+    margin-bottom: 200px;
   }
   @media screen and (max-width: 600px) {
     flex-direction: column;
@@ -14,7 +16,7 @@ export const MenuWrapper = styled.div`
   }
 `;
 
-export const ButtonsWrapper = styled.div`
+export const ButtonsWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   height: 140px;
@@ -39,7 +41,7 @@ export const Divider = styled.div`
   }
 `;
 
-export const TextButton = styled.button<{ $active: boolean }>`
+export const TextButton = styled(motion.button)<{ $active: boolean }>`
   background: none;
   border: none;
   position: relative;
@@ -104,9 +106,9 @@ export const TextButton = styled.button<{ $active: boolean }>`
   }
 `;
 
-export const TextWrapper = styled.article`
+export const TextWrapper = styled(motion.div)`
   margin-left: 40px;
-  min-height: 140px;
+  min-height: 300px;
   line-height: 34px;
   display: flex;
   flex-wrap: wrap;
@@ -128,11 +130,10 @@ export const TextWrapper = styled.article`
     width: 90%;
     min-height: 300px;
   }
-  & > div > a {
+  & > article > div > a {
     width: 140px;
     height: 40px;
     font-size: 2rem;
-    border: none;
     cursor: pointer;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     transition: all 0.2s ease-in-out;
@@ -141,12 +142,12 @@ export const TextWrapper = styled.article`
     display: flex;
     justify-content: center;
     align-items: center;
-    &:hover {
-      transform: scale(1.1);
-    }
     background: none;
     border: 2px solid ${({ theme }) => theme.palette.complementary.main};
     color: ${({ theme }) => theme.palette.complementary.main};
+    &:hover {
+      transform: scale(1.1);
+    }
     &:hover {
       background-color: ${({ theme }) => theme.palette.complementary.main};
       color: ${({ theme }) => theme.palette.complementary.contrastText};

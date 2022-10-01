@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const BaseButton = styled.button<{ variant?: string }>`
   width: 140px;
@@ -56,9 +57,12 @@ export const SectionStyled = styled.section`
   }
 `;
 
-export const TitleWrapper = styled.div`
+export const TitleWrapper = styled(motion.div)`
   width: 420px;
   text-align: center;
+  position: relative;
+  top: 0;
+  left: 0;
   h1 {
     font-weight: 400;
     font-size: 4rem;

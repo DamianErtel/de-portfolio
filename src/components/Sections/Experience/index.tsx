@@ -1,9 +1,10 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { SectionStyled, TitleWrapper, Container } from "../../../commonStyles";
+import { SectionStyled, Container } from "../../../commonStyles";
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import PickMenu from "../../PickMenu";
 import { IEmployerQuery } from "../../../types";
+import AnimatedTitleWrapper from "../../AnimatedTitleWrapper";
 
 const employerQuery = graphql`
   {
@@ -25,11 +26,11 @@ const Experience = () => {
   return (
     <SectionStyled ref={elementRef} id="experience">
       <Container>
-        <TitleWrapper>
+        <AnimatedTitleWrapper>
           <h1>
             My <span>Experience</span>
           </h1>
-        </TitleWrapper>
+        </AnimatedTitleWrapper>
         <PickMenu markdown content={data.gcms.employers} />
       </Container>
     </SectionStyled>
