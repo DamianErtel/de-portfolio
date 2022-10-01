@@ -52,8 +52,7 @@ export const SectionStyled = styled.section`
   color: ${({ theme }) => theme.palette.primary.contrastText};
   font-weight: bold;
   @media screen and (max-width: 600px) {
-    height: auto;
-    margin: 200px 0;
+    margin-bottom: 10vh;
   }
 `;
 

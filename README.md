@@ -5,7 +5,6 @@
 ## About the project
 
 1.  **Tech stack used.**
-
     <ul>
         <li>Typescript</li>
         <li>Gatsby</li>
@@ -37,10 +36,10 @@
             └── ... 
    ```
 
-3.  **Basic usage.**
+3. **Basic usage.**
 
     <ul>
-        <li>Usual developement starts with command - gatsby develop</li>
+        <li>Usual development starts with command - gatsby develop</li>
         <li>To build app in order to later serve it - gatsby build</li>
         <li>Example for serving app on your local network - gatsby build && gatsby serve -H 192.168.0.1 -p 9000
             <br/> which will serve app on 192.168.0.1:9000
@@ -48,5 +47,5 @@
         <li>In order to use these commands you must have gatsby-cli installed, more on that
             <a href="https://www.gatsbyjs.com/docs/reference/gatsby-cli/" target="_blank" rel="noreferrer">here</a>
         </li>
-        <li>If, for example, you would rather use 'npm start' instead of 'gatsby develop', check the package.json file for available scripts</li>
+        <li>If, for example, you would rather use 'yarn start' instead of 'gatsby develop', check the package.json file for available scripts</li>
     </ul>
