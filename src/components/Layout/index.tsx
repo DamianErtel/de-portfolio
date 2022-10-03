@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import defaultTheme from "../../theme/theme";
 import GlobalStyle from "../../theme/global";
@@ -10,11 +10,19 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const [theme, setTheme] = useState<boolean>(true);
+  const [theme, setTheme] = useState<boolean>(
+    localStorage.getItem("theme") === "true"
+  );
+
+  const handleSetTheme = (value: boolean) => {
+    localStorage.setItem("theme", value.toString());
+    setTheme(localStorage.getItem("theme") === "true");
+  };
+
   return (
-    <ThemeProvider theme={theme ? defaultTheme : darkTheme}>
+    <ThemeProvider theme={theme ? darkTheme : defaultTheme}>
       <GlobalStyle />
-      <NavBar theme={theme} setTheme={setTheme} />
+      <NavBar theme={theme} setTheme={handleSetTheme} />
       {children}
     </ThemeProvider>
   );

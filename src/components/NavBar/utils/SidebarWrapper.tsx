@@ -8,7 +8,7 @@ import useOutsideAlerter from "../../../hooks/useOutsideClick";
 
 interface SidebarWrapperProps {
   navLinks: NavLinkProps[];
-  setTheme: Dispatch<SetStateAction<boolean>>;
+  setTheme: (value: boolean) => void;
   theme: boolean;
 }
 
@@ -39,7 +39,7 @@ const SidebarWrapper = ({ navLinks, setTheme, theme }: SidebarWrapperProps) => {
             $mobile
             aria-label={`enable ${theme ? "dark" : "light"} mode`}
             type="button"
-            onClick={() => setTheme((prevState: boolean) => !prevState)}
+            onClick={() => setTheme(!theme)}
           >
             {theme ? <DarkMode /> : <Lightbulb />}
           </DarkModeButton>

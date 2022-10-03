@@ -6,7 +6,7 @@ import SidebarWrapper from "./utils/SidebarWrapper";
 import { LocationContext } from "../../utils/LocationContext";
 
 interface NavBarProps {
-  setTheme: Dispatch<SetStateAction<boolean>>;
+  setTheme: (value: boolean) => void;
   theme: boolean;
 }
 
@@ -28,7 +28,7 @@ const NavBar = ({ setTheme, theme }: NavBarProps) => {
         <DarkModeButton
           aria-label={`enable ${theme ? "dark" : "light"} mode`}
           type="button"
-          onClick={() => setTheme((prevState: boolean) => !prevState)}
+          onClick={() => setTheme(!theme)}
         >
           {theme ? <DarkMode /> : <Lightbulb />}
         </DarkModeButton>

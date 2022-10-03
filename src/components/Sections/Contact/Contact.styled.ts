@@ -1,16 +1,26 @@
 import styled from "styled-components";
+import { StyledMessageContainer } from "../../../commonStyles";
 
-export const ContactTextWrapper = styled.article`
-  font-size: 2rem;
-  text-align: center;
-  max-width: 600px;
-  line-height: 30px;
-  letter-spacing: 1px;
+export const ContactButtonsWrapper = styled.article`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 400px;
   @media screen and (max-width: 600px) {
-    margin: 0 auto;
+    width: auto;
+    flex-direction: column;
+    height: 150px;
   }
-  a {
-    color: ${({ theme }) => theme.palette.complementary.main};
-    text-decoration: underline;
+`;
+
+export const ContactMessageContainer = styled(StyledMessageContainer)`
+  & > div {
+    font-size: 2.6rem;
+    text-align: center;
+  }
+
+  div:first-child {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
   }
 `;
