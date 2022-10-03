@@ -127,6 +127,7 @@ export const TextWrapper = styled(motion.div)`
   @media only screen and (max-width: 600px) {
     margin: auto;
     justify-content: center;
+    align-items: flex-start;
     width: 90%;
     min-height: 300px;
   }

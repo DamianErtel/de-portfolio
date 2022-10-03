@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Markdown from "markdown-to-jsx";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   ButtonsWrapper,
   Divider,
@@ -9,6 +8,7 @@ import {
   TextWrapper,
 } from "./PickMenu.styled";
 import { IContent, IEmployer, IProject, NonEmptyArr } from "../../types";
+import AnimatedArticle from "../AnimatedArticle";
 
 interface PickMenuProps {
   content: NonEmptyArr<IContent | IEmployer | IProject>;
@@ -34,39 +34,15 @@ const PickMenu = ({ content, markdown }: PickMenuProps) => {
       <Divider />
       {markdown ? (
         <TextWrapper>
-          <AnimatePresence mode="wait">
-            <motion.article
-              key={currentContentIndex}
-              initial={{ opacity: 0, position: "relative", bottom: 20 }}
-              animate={{ opacity: 1, bottom: 0 }}
-              whileInView={{ opacity: 1 }}
-              exit={{ bottom: -200, opacity: 0 }}
-              transition={{
-                bottom: { duration: 0.425 },
-                opacity: { duration: 0.35 },
-              }}
-            >
-              <Markdown>{content[currentContentIndex].value}</Markdown>
-            </motion.article>
-          </AnimatePresence>
+          <AnimatedArticle $key={currentContentIndex}>
+            <Markdown>{content[currentContentIndex].value}</Markdown>
+          </AnimatedArticle>
         </TextWrapper>
       ) : (
         <TextWrapper>
-          <AnimatePresence mode="wait">
-            <motion.article
-              key={currentContentIndex}
-              initial={{ opacity: 0, position: "relative", bottom: 20 }}
-              animate={{ opacity: 1, bottom: 0 }}
-              whileInView={{ opacity: 1 }}
-              exit={{ bottom: -100, opacity: 0 }}
-              transition={{
-                bottom: { duration: 0.425 },
-                opacity: { duration: 0.35 },
-              }}
-            >
-              {content[currentContentIndex].value}
-            </motion.article>
-          </AnimatePresence>
+          <AnimatedArticle $key={currentContentIndex}>
+            {content[currentContentIndex].value}
+          </AnimatedArticle>
         </TextWrapper>
       )}
     </MenuWrapper>
