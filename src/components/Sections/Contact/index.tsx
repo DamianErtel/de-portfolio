@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  SectionStyled,
-  Container,
-  StyledMessageContainer,
-  BaseButton,
-} from "../../../commonStyles";
+import { SectionStyled, Container, BaseButton } from "../../../commonStyles";
 import {
   ContactButtonsWrapper,
   ContactMessageContainer,
